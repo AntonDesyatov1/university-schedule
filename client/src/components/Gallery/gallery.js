@@ -26,7 +26,7 @@ class Gallery extends React.Component {
     return images.map(
       ({ title, description, imageUrl, price, owner, comments }) => (
         <div className="gallery__item-container">
-          <section className="gallery__item">
+          <section className="gallery__item-content">
             <Image
               title={title}
               description={description}

@@ -54,10 +54,10 @@ class Image extends React.Component {
     } = this.props;
     return (
       <React.Fragment>
-        <div className="image__container">
+        <div className="image__picture">
           <img src={url} />
         </div>
-        <div>
+        <div className="image__item-description">
           <p>Title: {title}</p>
           <p>Description: {description}</p>
           <p>Price: {price}</p>

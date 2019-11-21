@@ -1,18 +1,12 @@
-.image__container {
+.image__picture {
   height: 100%;
-  width: 30%;
-  padding-right: 1rem;
+  width: 20%;
 }
 
 img {
   max-width: 100%;
   max-height: 100%;
 }
-
-/* .image {
-  padding: 1rem;
-  border-bottom: 1px solid black;
-} */
 
 .image {
   width: 100%;
@@ -21,13 +15,21 @@ img {
   justify-content: space-between;
 }
 
+.image__item-description {
+  width: 40%;
+}
+
+.image__item-description p {
+  margin: 0;
+}
+
 .image__comment-section {
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width: 40%;
   overflow: auto;
-  padding-left: 2rem;
-  /* border-left: 1px solid black; */
+  font-size: 0.8rem;
+  border: 1px solid black;
 }
 
 .image__send-comment {
@@ -37,5 +39,6 @@ img {
 }
 
 .image__comment {
-  border: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 0.5rem;
 }
