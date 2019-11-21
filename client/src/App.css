@@ -1,0 +1,9 @@
+.app {
+  display: flex;
+  height: 90%;
+}
+
+.app__content {
+  width: 90%;
+  padding: 2rem;
+}

@@ -1,0 +1,75 @@
+.login-modal__background {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  z-index: 0;
+}
+
+.login-modal {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  background-color: grey;
+  padding: 1rem;
+  height: 40%;
+  width: 40%;
+  cursor: default;
+  z-index: 1;
+}
+
+.login-modal__button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-modal__close-button:before {
+  content: "x";
+  width: 32px;
+  height: 32px;
+}
+
+.login-modal__close-button {
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.login-modal__close-button:hover {
+  transform: rotate(90deg);
+}
+
+.login-modal__header {
+  text-align: center;
+  height: 20%;
+  border-bottom: 1px solid black;
+}
+
+.login-modal__form-container {
+  display: flex;
+  height: 75%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login-modal__form-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4rem;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.login-modal__form-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-modal__error {
+  color: red;
+}
