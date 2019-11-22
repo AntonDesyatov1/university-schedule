@@ -38,7 +38,9 @@ class Image extends React.Component {
         );
       })
     ) : (
-      <span>There is no comments for this image</span>
+      <span className="image__warning">
+        There is no comments for this image
+      </span>
     );
   }
 
@@ -76,7 +78,7 @@ class Image extends React.Component {
               <input type="submit" value="Send comment" />
             </form>
           ) : (
-            <span>Log in to leave your comment</span>
+            <span className="image__warning">Log in to leave your comment</span>
           )}
         </section>
       </React.Fragment>

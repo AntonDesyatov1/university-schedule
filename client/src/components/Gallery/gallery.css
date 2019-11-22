@@ -30,6 +30,7 @@
   display: flex;
   justify-content: space-between;
   height: 70%;
+  border: 1px solid black;
 }
 
 .gallery__item-container {

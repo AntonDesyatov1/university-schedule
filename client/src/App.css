@@ -6,5 +6,6 @@
 
 .app__content {
   width: 90%;
+  min-width: 600px;
   padding: 2rem;
 }
