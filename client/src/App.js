@@ -6,7 +6,7 @@ import Gallery from "./containers/Gallery/gallery";
 import AuthModal from "./containers/LoginModal/login-modal";
 import Profile from "./containers/Profile/profile";
 
-import "./App.css";
+import "./App.scss";
 
 class App extends Component {
   constructor(props) {
@@ -86,11 +86,13 @@ class App extends Component {
               user={this.props.user}
               logout={this.props.logoutAction}
             />
-            <div className="app__content">
-              <Switch>
-                <Route path="/profile" component={Profile} />
-                <Route path="/gallery" component={Gallery} />
-              </Switch>
+            <div className="app__wrapper">
+              <div className="app__content">
+                <Switch>
+                  <Route path="/profile" component={Profile} />
+                  <Route path="/gallery" component={Gallery} />
+                </Switch>
+              </div>
             </div>
           </div>
         </Router>

@@ -41,10 +41,10 @@ export const fetchGalleryImagesAction = () => async dispatch => {
   } catch (e) {}
 };
 
-export const postCommentAction = (comment, name) => async dispatch => {
+export const postCommentAction = (comment, title, author) => async dispatch => {
   dispatch(setLoadingTrueAction());
   try {
-    const data = await postCommentRequest(comment, name);
+    const data = await postCommentRequest(comment, title, author);
     dispatch(setGalleryImagesAction(data));
     dispatch(setLoadingFalseAction());
   } catch (e) {}

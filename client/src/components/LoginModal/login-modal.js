@@ -1,6 +1,6 @@
 import React from "react";
 import { ERRORS } from "../../constants";
-import "./login-modal.css";
+import "./login-modal.scss";
 
 class LoginModal extends React.Component {
   constructor(props) {

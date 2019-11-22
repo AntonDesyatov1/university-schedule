@@ -12,8 +12,8 @@ export const fetchCommentsRequest = () => {
     .catch(err => err);
 };
 
-export const postCommentRequest = (comment, name) => {
-  let reqBody = { comment, name };
+export const postCommentRequest = (comment, title, author) => {
+  let reqBody = { comment, title, author };
   return fetch("http://localhost:9000/fetchComments", {
     method: "POST",
     mode: "cors",

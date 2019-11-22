@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./image.css";
+import "./image.scss";
 
 class Image extends React.Component {
   constructor(props) {
@@ -18,9 +18,9 @@ class Image extends React.Component {
   }
 
   handleSubmit(e) {
-    const { requestSendComment, title } = this.props;
+    const { requestSendComment, title, user: author } = this.props;
     e.preventDefault();
-    requestSendComment(this.state.inputValue, title);
+    requestSendComment(this.state.inputValue, title, author);
   }
 
   renderComments(comments) {
@@ -65,22 +65,6 @@ class Image extends React.Component {
           <p>Price: {price}</p>
           <p>Owner: {owner}</p>
         </div>
-        <section className="image__comment-section">
-          {this.renderComments(comments)}
-          {user ? (
-            <form onSubmit={this.handleSubmit} className="image__send-comment">
-              <textarea
-                type="text"
-                value={this.state.value}
-                onChange={this.handleChange}
-                name="comment"
-              />
-              <input type="submit" value="Send comment" />
-            </form>
-          ) : (
-            <span className="image__warning">Log in to leave your comment</span>
-          )}
-        </section>
       </React.Fragment>
     );
   }
