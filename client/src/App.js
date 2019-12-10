@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Gallery from "./containers/Gallery/gallery";
 import AuthModal from "./containers/LoginModal/login-modal";
 import Profile from "./containers/Profile/profile";
+import Greeting from "./components/Greeting";
 
 import "./App.scss";
 
@@ -36,7 +37,7 @@ class App extends Component {
         toggleLoginModal={this.toggleLoginModal}
         toggleSignupModal={this.toggleSingupModal}
         loginModalVisible={this.state.loginModalVisible}
-        user={this.props.user}
+        // user={this.props.user}
         closeAuthModals={this.closeAuthModals}
         signupUser={this.signupUser}
         loginUser={this.loginUser}
@@ -91,6 +92,9 @@ class App extends Component {
                 <Switch>
                   <Route path="/profile" component={Profile} />
                   <Route path="/gallery" component={Gallery} />
+                  <Route>
+                    <Greeting />
+                  </Route>
                 </Switch>
               </div>
             </div>

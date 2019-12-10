@@ -33,9 +33,6 @@ class Navigation extends React.Component {
           <span className="navigation__link">
             <Link to="/gallery">Gallery</Link>
           </span>
-          <span className="navigation__link">
-            <Link to="/donate">Donate</Link>
-          </span>
           {this.props.user && this.props.user.login ? (
             <span className="navigation__link" onClick={this.props.logout}>
               Logout

@@ -114,8 +114,11 @@ export const loginUserAction = (login, password) => async dispatch => {
     const data = await loginUserRequest(login, password);
     data.error
       ? dispatch(createErrorAction(data.error))
-      : dispatch(setUserAction(data));
-    localStorage.setItem("user", data.login);
+      : () => {
+          dispatch(setUserAction(data));
+          localStorage.setItem("user", data.login);
+        };
+
     dispatch(setLoadingFalseAction());
   } catch (e) {}
 };

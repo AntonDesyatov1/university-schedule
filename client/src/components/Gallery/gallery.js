@@ -11,6 +11,7 @@ class Gallery extends React.Component {
     };
 
     this.requestSendComment = this.requestSendComment.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -42,53 +43,31 @@ class Gallery extends React.Component {
     );
   }
 
+  handleSubmit(e) {
+    const { requestSendComment, title, user: author } = this.props;
+    e.preventDefault();
+    this.requestSendComment(this.state.inputValue, title, author);
+  }
+
   renderImages(images) {
     const login = this.props.user && this.props.user.login;
     const comments = this.props.user && this.props.user.comments;
     return images.map(
       ({ title, description, imageUrl, price, owner, comments }) => (
         <div className="gallery__item-wrapper">
-          <div className="gallery__item-info">
-            <section className="gallery__item-info-content">
-              <Image
-                title={title}
-                description={description}
-                url={imageUrl}
-                owner={owner}
-                price={price}
-                comments={comments}
-                user={login}
-                requestSendComment={this.requestSendComment}
-              />
-            </section>
-            <button className="gallery__item-purchase">
-              Purchase this image
-            </button>
-          </div>
-          <div className="gallery__item-comments-wrapper">
-            <section className="gallery__item-comments">
-              {this.renderComments(comments)}
-            </section>
-            {this.props.user ? (
-              <form
-                onSubmit={this.handleSubmit}
-                className="gallery__item-comments-form"
-              >
-                <textarea
-                  type="text"
-                  value={this.state.value}
-                  onChange={this.handleChange}
-                  name="comment"
-                  style={{ width: "80%" }}
-                />
-                <input type="submit" value="Send comment" />
-              </form>
-            ) : (
-              <span className="gallery__warning">
-                Log in to leave your comment
-              </span>
-            )}
-          </div>
+          <Image
+            title={title}
+            description={description}
+            url={imageUrl}
+            owner={owner}
+            price={price}
+            comments={comments}
+            user={login}
+            requestSendComment={this.requestSendComment}
+          />
+          {/* <button className="gallery__item-purchase">
+            Purchase this image
+          </button> */}
         </div>
       )
     );

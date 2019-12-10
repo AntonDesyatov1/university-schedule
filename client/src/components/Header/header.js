@@ -5,12 +5,7 @@ import "./header.scss";
 
 class Header extends React.Component {
   render() {
-    return (
-      <div className="header-container">Hello!</div>
-      // <Link to="/">
-      //   <h1 className="header-container">Public Gallery</h1>
-      // </Link>
-    );
+    return <h1 className="header-container">Public Gallery</h1>;
   }
 }
 

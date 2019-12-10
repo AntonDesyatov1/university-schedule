@@ -55,13 +55,15 @@ class LoginModal extends React.Component {
     if (!loginInput) {
       return createErrorAction(ERRORS.EMPTY_LOGIN);
     }
+
     if (!passwordInput) {
       return createErrorAction(ERRORS.EMPTY_PASSWORD);
     }
-
     loginUser(loginInput, passwordInput);
-    clearErrorsAction();
-    toggleLoginModal();
+    if (localStorage.getItem("user")) {
+      toggleLoginModal();
+      clearErrorsAction();
+    }
   }
 
   submitSignup(e) {

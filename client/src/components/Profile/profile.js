@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "../Image";
+
+import "./profile.scss";
+
 class Profile extends React.Component {
   renderImages = images =>
     images ? (
@@ -21,15 +24,14 @@ class Profile extends React.Component {
     );
 
   render() {
-    const user = this.props;
+    const { user } = this.props;
     return user ? (
-      <div>
-        <header>Here will be profile</header>
-        <section>
+      <div className="profile__wrapper">
+        <section className="profile__user-metadata">
           <span>Name: {user.name}</span>
           <span>Balance: {user.balance}</span>
         </section>
-        <section>
+        <section className="profile__user-images">
           <span>Purchased images:</span>
           <span>{this.renderImages(user.images)}</span>
         </section>
