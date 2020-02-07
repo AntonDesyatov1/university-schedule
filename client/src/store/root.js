@@ -1,8 +1,10 @@
 import { combineReducers } from "redux";
 import main from "./main";
-import gallery from "./gallery";
+import configuration from "./configuration";
+import schedule from "./schedule";
 
 export default combineReducers({
   main,
-  gallery
+  configuration,
+  schedule
 });

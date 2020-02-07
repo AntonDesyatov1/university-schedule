@@ -5,13 +5,21 @@ import {
   clearErrorsAction,
   logoutAction,
   fetchUserDataAction,
-  signupUserAction
+  signupUserAction,
+  setUniversityAction
 } from "../../store/main";
+import {
+  fetchScheduleDataAction,
+  fetchUniversitiesAction
+} from "../../store/schedule";
 
 const mapStateToProps = state => ({
   isLoading: state.main.isLoading,
   user: state.main.user,
-  error: state.main.error
+  error: state.main.error,
+  configuration: state.configuration,
+  universities: state.schedule.universities,
+  data: state.schedule.data
 });
 
 const mapDispatchToProps = {
@@ -19,7 +27,10 @@ const mapDispatchToProps = {
   clearErrorsAction,
   logoutAction,
   fetchUserDataAction,
-  signupUserAction
+  signupUserAction,
+  fetchScheduleDataAction,
+  fetchUniversitiesAction,
+  setUniversityAction
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

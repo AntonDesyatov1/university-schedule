@@ -1,0 +1,69 @@
+.login-modal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+  height: 40%;
+  border: 1px solid black;
+  background-color: purple;
+  color: white;
+  z-index: 1;
+  cursor: default;
+
+  &__background {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(140, 145, 141, 0.9);
+    width: 100%;
+    height: 100%;
+    &:hover {
+      cursor: pointer;
+    }
+    z-index: 0;
+  }
+
+  &__header {
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-block-end: 1px solid grey;
+
+    &-text {
+      all: unset;
+      font-size: 15pt;
+      margin: auto;
+    }
+  }
+
+  &__close-button {
+    align-self: flex-start;
+    margin: 1% 1% 0 0;
+    background-color: inherit;
+    border: none;
+    font-size: 15pt;
+    color: white;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: space-between;
+    padding: 10%;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__error {
+    color: red;
+  }
+}

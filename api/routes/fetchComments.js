@@ -13,7 +13,6 @@ router.get("/", function(req, res, next) {
 router.post("/", function(req, res, next) {
   console.log(req.body);
   let { title, comment, author } = req.body;
-  console.log(title);
   db.images
     .find(image => image.title == title)
     .comments.push({ author, comment: comment });

@@ -1,18 +1,4 @@
-.app {
+.app-wrapper {
   display: flex;
-  height: 90%;
-  font-family: sans-serif;
-
-  &__wrapper {
-    height: 100%;
-    width: 90%;
-    display: flex;
-    overflow: auto;
-  }
-
-  &__content {
-    width: 90%;
-    min-width: 600px;
-    padding: 2rem;
-  }
+  height: 100%;
 }

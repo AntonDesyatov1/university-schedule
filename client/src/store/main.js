@@ -1,4 +1,4 @@
-import { ACTIONS } from "../constants/constants";
+import { ACTIONS } from "../constants/actions";
 import {
   loginUserRequest,
   fetchUserDataRequest,
@@ -6,9 +6,11 @@ import {
 } from "../api";
 
 const initialState = {
-  isLoading: false,
   user: null,
-  error: null
+  university: null,
+  isLoading: false,
+  error: null,
+  isConfigOpen: false
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -54,6 +56,18 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         error: action.payload.error
       };
+
+    case ACTIONS.CLOSE_CONFIG:
+      return {
+        ...state,
+        isConfigOpen: false
+      };
+
+    case ACTIONS.OPEN_CONFIG:
+      return {
+        ...state,
+        isConfigOpen: true
+      };
   }
   return state;
 }
@@ -64,6 +78,11 @@ export const setLoadingTrueAction = () => ({
   payload: {
     isLoading: true
   }
+});
+
+export const setUniversityAction = university => ({
+  type: ACTIONS.SET_UNIVERSITY_ACTION,
+  payload: university
 });
 
 export const setLoadingFalseAction = () => ({
@@ -85,6 +104,14 @@ export const createErrorAction = error => ({
   payload: {
     error
   }
+});
+
+export const openConfigAction = () => ({
+  type: ACTIONS.OPEN_CONFIG
+});
+
+export const closeConfigAction = () => ({
+  type: ACTIONS.CLOSE_CONFIG
 });
 
 //USER ACTIONS CREATORS

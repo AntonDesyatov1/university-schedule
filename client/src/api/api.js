@@ -1,16 +1,7 @@
-export const fetchGalleryImagesRequest = () => {
-  return fetch("http://localhost:9000/fetchImages")
+export const fetchUniversitiesRequest = () =>
+  fetch("http://localhost:9000/universities")
     .then(res => res.json())
-    .then(responseData => responseData)
-    .catch(err => err);
-};
-
-export const fetchCommentsRequest = () => {
-  return fetch("http://localhost:9000/fetchComments")
-    .then(res => res.json())
-    .then(responseData => responseData)
-    .catch(err => err);
-};
+    .then(responseData => responseData);
 
 export const postCommentRequest = (comment, title, author) => {
   let reqBody = { comment, title, author };
@@ -35,6 +26,21 @@ export const loginUserRequest = (login, password) => {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(reqBody)
+  })
+    .then(res => res.json())
+    .then(responseData => responseData)
+    .catch(err => err);
+};
+
+export const fetchScheduleDataRequest = university => {
+  console.log(university);
+  return fetch("http://localhost:9000/fetchScheduleData", {
+    method: "POST",
+    mode: "cors",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(university)
   })
     .then(res => res.json())
     .then(responseData => responseData)

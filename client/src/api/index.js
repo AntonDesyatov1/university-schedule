@@ -5,5 +5,7 @@ export {
   postCommentRequest,
   loginUserRequest,
   fetchUserDataRequest,
-  signupUserRequest
+  signupUserRequest,
+  fetchScheduleDataRequest,
+  fetchUniversitiesRequest
 } from "./api";
