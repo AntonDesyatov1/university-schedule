@@ -68,6 +68,12 @@ export default function reducer(state = initialState, action = {}) {
         ...state,
         isConfigOpen: true
       };
+
+    case ACTIONS.SET_UNIVERSITY_ACTION:
+      return {
+        ...state,
+        university: action.payload
+      };
   }
   return state;
 }

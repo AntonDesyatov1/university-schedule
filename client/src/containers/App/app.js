@@ -19,7 +19,8 @@ const mapStateToProps = state => ({
   error: state.main.error,
   configuration: state.configuration,
   universities: state.schedule.universities,
-  data: state.schedule.data
+  data: state.schedule.data,
+  university: state.main.university
 });
 
 const mapDispatchToProps = {

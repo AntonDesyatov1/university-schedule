@@ -1,0 +1,56 @@
+.university-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(128, 127, 125, 0.5);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    height: 50%;
+    border: 1px solid black;
+    background-color: white;
+    overflow: auto;
+  }
+
+  &__university-card {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black;
+    &:hover {
+      cursor: pointer;
+      background-color: grey;
+      transition: 1s;
+    }
+
+    &-last {
+      display: flex;
+      width: 100%;
+      border: none;
+      &:hover {
+        cursor: pointer;
+        background-color: grey;
+        transition: 1s;
+      }
+    }
+  }
+
+  &__img-container {
+    height: 80px;
+    width: 80px;
+    border-right: 1px solid black;
+  }
+
+  &__img-container > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img-container + span {
+    margin: auto;
+  }
+}

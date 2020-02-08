@@ -3,7 +3,9 @@ import Header from "./containers/header/header";
 // import MainContent from "./components/main-content";
 import MainContent from "./containers/main-content/main-content";
 import LoginModal from "./components/login-modal";
+import UniversityPicker from "./components/university-picker";
 import { LOGIN_TOGGLE_CN } from "./constants/class-names";
+
 import "./App.scss";
 
 class App extends Component {
@@ -11,16 +13,13 @@ class App extends Component {
     super(props);
 
     this.state = {
-      loginModalOpen: false
+      loginModalOpen: false,
+      isPickerVisible: true
     };
   }
 
   componentDidMount() {
     this.props.fetchUniversitiesAction();
-  }
-
-  renderUniversityPicker() {
-    console.log("rendering picker");
   }
 
   renderLoading() {
@@ -40,21 +39,43 @@ class App extends Component {
     }
   };
 
-  render() {
+  onUniversityPick = ({ target }) => {
+    const university = target.querySelector("span").innerHTML;
+    console.log(university);
+    this.setState({ isPickerVisible: false });
+    this.props.setUniversityAction(university);
+  };
+
+  renderMainContent = () => {
     const { loginModalOpen } = this.state;
-    const {
-      data,
-      configuration: { day },
-      universities
-    } = this.props;
     return (
-      <div className="app-wrapper">
-        {universities ? this.renderUniversityPicker() : this.renderLoading()}
-        {/* {loginModalOpen && (
+      <React.Fragment>
+        {loginModalOpen && (
           <LoginModal toggleLoginModal={this.toggleLoginModal} />
         )}
-        <Header user={true} toggleLoginModal={this.toggleLoginModal} render />
-        <MainContent /> */}
+        <Header user={true} toggleLoginModal={this.toggleLoginModal} />
+        <MainContent />
+      </React.Fragment>
+    );
+  };
+
+  render() {
+    const {
+      configuration: { day },
+      universities,
+      university,
+      setUniversityAction
+    } = this.props;
+    const { isPickerVisible } = this.state;
+    return (
+      <div className="app-wrapper">
+        {isPickerVisible && (
+          <UniversityPicker
+            universities={universities}
+            onPick={this.onUniversityPick}
+          />
+        )}
+        {university && this.renderMainContent()}
       </div>
     );
   }
