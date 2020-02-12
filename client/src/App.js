@@ -41,7 +41,6 @@ class App extends Component {
 
   onUniversityPick = ({ target }) => {
     const university = target.querySelector("span").innerHTML;
-    console.log(university);
     this.setState({ isPickerVisible: false });
     this.props.setUniversityAction(university);
   };

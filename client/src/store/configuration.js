@@ -20,6 +20,12 @@ export default function reducer(state = initialState, action = {}) {
         day: action.day
       };
 
+    case ACTIONS.RESET_CONFIGURATION:
+      return {
+        ...initialState,
+        university: state.university
+      };
+
     default:
       return state;
   }
@@ -38,4 +44,8 @@ export const setConfigurationAction = ({
   faculty,
   group,
   day
+});
+
+export const resetConfiguartionAction = () => ({
+  type: ACTIONS.RESET_CONFIGURATION
 });

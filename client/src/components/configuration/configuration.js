@@ -6,7 +6,6 @@ class Configuration extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      university: null,
       course: null,
       faculty: null,
       group: null,
@@ -17,18 +16,6 @@ class Configuration extends Component {
   setConfiguration = () => {
     this.props.setConfigurationAction(this.state);
   };
-
-  renderUniversitySelector = () => (
-    <div className="configuration__select-container">
-      <label for="university">Select your university</label>
-      <Select
-        onChange={this.handleUniversityChange}
-        options={this.formSelectData(this.props.data.universities)}
-        placeholder="Select university"
-        value={this.state.university || this.props.university}
-      />
-    </div>
-  );
 
   formSelectData = data => data.map(item => ({ value: item, label: item }));
 
@@ -114,10 +101,19 @@ class Configuration extends Component {
   handleDayChange = value =>
     this.setState({ day: value }, this.setConfiguration);
 
+  handleReset = () =>
+    this.setState(
+      {
+        course: null,
+        faculty: null,
+        group: null
+      },
+      this.props.resetConfiguartionAction
+    );
+
   render() {
-    const { university, faculty, course, group } = this.state;
+    const { faculty, course, group } = this.state;
     const {
-      university: savedUniversity,
       course: savedCourse,
       faculty: savedFaculty,
       group: savedGroup
@@ -125,12 +121,14 @@ class Configuration extends Component {
     return (
       <section className="configuration__container">
         <form className="configuration__form">
-          {this.renderUniversitySelector()}
-          {(university || savedUniversity) && this.renderCourseSelector()}
+          {this.renderCourseSelector()}
           {(course || savedCourse) && this.renderFacultySelector()}
           {(faculty || savedFaculty) && this.renderGroupSelector()}
           {(group || savedGroup) && this.renderDaySelector()}
         </form>
+        <button className="configuration__reset" onClick={this.handleReset}>
+          Reset
+        </button>
       </section>
     );
   }

@@ -1,6 +1,9 @@
 import Configuration from "../../components/configuration";
 import { connect } from "react-redux";
-import { setConfigurationAction } from "../../store/configuration";
+import {
+  setConfigurationAction,
+  resetConfiguartionAction
+} from "../../store/configuration";
 import { fetchScheduleDataAction } from "../../store/schedule";
 
 const mapStateToProps = state => ({
@@ -13,7 +16,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   setConfigurationAction,
-  fetchScheduleDataAction
+  fetchScheduleDataAction,
+  resetConfiguartionAction
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Configuration);
