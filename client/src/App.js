@@ -4,7 +4,8 @@ import Header from "./containers/header/header";
 import MainContent from "./containers/main-content/main-content";
 import LoginModal from "./components/login-modal";
 import UniversityPicker from "./components/university-picker";
-import { LOGIN_TOGGLE_CN } from "./constants/class-names";
+import { TOGGLE_CN } from "./constants/class-names";
+import SubjectModal from "./components/subject-modal";
 
 import "./App.scss";
 
@@ -14,7 +15,9 @@ class App extends Component {
 
     this.state = {
       loginModalOpen: false,
-      isPickerVisible: true
+      isPickerVisible: true,
+      isSubjectModalVisible: false,
+      subjectModalMetadata: null
     };
   }
 
@@ -34,7 +37,7 @@ class App extends Component {
   }
 
   toggleLoginModal = e => {
-    if (LOGIN_TOGGLE_CN.includes(e.target.className)) {
+    if (TOGGLE_CN.includes(e.target.className)) {
       this.setState({ loginModalOpen: !this.state.loginModalOpen });
     }
   };
@@ -68,19 +71,43 @@ class App extends Component {
     return null;
   };
 
+  openSubjectModal = data =>
+    this.setState({ isSubjectModalVisible: true, subjectModalMetadata: data });
+
+  closeSubjectModal = e => {
+    if (TOGGLE_CN.includes(e.target.className)) {
+      this.setState({
+        isSubjectModalVisible: false
+      });
+    }
+  };
+
   renderMainContent = () => {
-    const { loginModalOpen } = this.state;
+    const {
+      loginModalOpen,
+      isSubjectModalVisible,
+      subjectModalMetadata
+    } = this.state;
     return (
       <React.Fragment>
         {loginModalOpen && (
           <LoginModal toggleLoginModal={this.toggleLoginModal} />
+        )}
+        {isSubjectModalVisible && (
+          <SubjectModal
+            {...subjectModalMetadata}
+            closeModal={this.closeSubjectModal}
+          />
         )}
         <Header
           user={true}
           toggleLoginModal={this.toggleLoginModal}
           data={this.props.data}
         />
-        <MainContent data={this.getScheduleData()} />
+        <MainContent
+          data={this.getScheduleData()}
+          openSubjectModal={this.openSubjectModal}
+        />
       </React.Fragment>
     );
   };

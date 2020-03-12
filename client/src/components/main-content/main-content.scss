@@ -35,6 +35,7 @@
       align-items: center;
       width: 100%;
       padding: 5%;
+      overflow: auto;
     }
   }
 
@@ -42,7 +43,16 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 10fr;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__time-grid {
+    width: 100%;
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(5, 1fr);
     justify-items: center;
     align-items: center;
   }

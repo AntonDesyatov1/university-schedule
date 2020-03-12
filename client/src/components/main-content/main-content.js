@@ -28,6 +28,9 @@ class MainContent extends Component {
     return;
   };
 
+  toggleModal = () =>
+    this.setState({ isModalVisible: !this.state.isModalVisible });
+
   renderScheduleData = () => {
     const { data } = this.props;
     return (
@@ -37,12 +40,23 @@ class MainContent extends Component {
           <button onClick={() => this.setState({ week: 1 })}>week 2</button>
         </span>
         <div className="main-content__grid">
+          <span>time</span>
+          <div className="main-content__time-grid">
+            <span>8:00-9:20</span>
+            <span>9:50-11:20</span>
+            <span>11:40-13:15</span>
+            <span>13:45-15:15</span>
+            <span>15:35-16:55</span>
+          </div>
           {data[this.state.week].map(day => (
             <React.Fragment>
               <span className="main-content__day">{day.name}</span>
               <section className="main-content__schedule">
                 {day.lessons.map(lesson => (
-                  <LessonCard data={lesson} />
+                  <LessonCard
+                    openSubjectModal={this.props.openSubjectModal}
+                    data={lesson}
+                  />
                 ))}
               </section>
             </React.Fragment>
