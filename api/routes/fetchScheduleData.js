@@ -6,7 +6,8 @@ var db = JSON.parse(fs.readFileSync("./databases/database.json"));
 
 router.post("/", function(req, res, next) {
   const { university } = req.body;
-  return res.status(200).send(db.universities[university]);
+  console.log(db);
+  return res.status(200).send(db[university]);
 });
 
 module.exports = router;

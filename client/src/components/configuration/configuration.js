@@ -19,54 +19,68 @@ class Configuration extends Component {
 
   formSelectData = data => data.map(item => ({ value: item, label: item }));
 
-  renderCourseSelector = () => (
-    <div className="configuration__select-container">
-      <label for="course">University year:</label>
-      <Select
-        onChange={this.handleCourseChange}
-        options={this.formSelectData(this.props.data.courses)}
-        placeholder="Select course"
-        value={this.state.course || this.props.course}
-      />
-    </div>
-  );
-
-  renderFacultySelector = () => {
-    console.log("Rendering faculty selector");
+  renderCourseSelector = courses => {
     return (
       <div className="configuration__select-container">
-        <label for="faculty">Select faculty:</label>
+        <label for="course">University year:</label>
         <Select
-          onChange={this.handleFacultyChange}
-          options={this.formSelectData(this.props.data.faculties)}
-          value={this.state.faculty || this.props.faculty}
+          onChange={this.handleCourseChange}
+          options={courses.map(course => ({
+            value: course.number,
+            label: course.number
+          }))}
+          placeholder="Select course"
+          value={this.state.course || this.props.course}
         />
       </div>
     );
   };
 
-  renderGroupSelector = () => (
-    <div className="configuration__select-container">
-      <label for="group">Select group:</label>
-      <Select
-        onChange={this.handleGroupChange}
-        options={this.formSelectData(this.props.data.groups)}
-        placeholder="Select group"
-        value={this.state.group || this.props.group}
-      />
-    </div>
-  );
+  renderFacultySelector = faculties => {
+    return (
+      <div className="configuration__select-container">
+        <label for="faculty">Select faculty:</label>
+        <Select
+          onChange={this.handleFacultyChange}
+          options={faculties.map(faculty => ({
+            value: faculty.name,
+            label: faculty.name
+          }))}
+          value={this.state.faculty}
+        />
+      </div>
+    );
+  };
 
-  renderDaySelector = () => (
-    <div className="configuration__select-container">
-      <label for="day">Day:</label>
-      <Select
-        onChange={this.handleDayChange}
-        options={this.formSelectData(this.props.data.days)}
-        value={this.state.day || this.props.day}
-      />
-    </div>
-  );
+  renderGroupSelector = groups => {
+    return (
+      <div className="configuration__select-container">
+        <label for="group">Select group:</label>
+        <Select
+          onChange={this.handleGroupChange}
+          options={groups.map(group => ({
+            value: group.number,
+            label: group.number
+          }))}
+          placeholder="Select group"
+          value={this.state.group}
+        />
+      </div>
+    );
+  };
+
+  // renderDaySelector = () => {
+  //   return (
+  //     <div className="configuration__select-container">
+  //       <label for="day">Day:</label>
+  //       <Select
+  //         onChange={this.handleDayChange}
+  //         options={this.formSelectData(data.days)}
+  //         value={this.state.day || day}
+  //       />
+  //     </div>
+  //   );
+  // };
 
   handleUniversityChange = value => {
     this.setState(
@@ -113,18 +127,26 @@ class Configuration extends Component {
 
   render() {
     const { faculty, course, group } = this.state;
-    const {
-      course: savedCourse,
-      faculty: savedFaculty,
-      group: savedGroup
-    } = this.props;
+    const { data } = this.props;
     return (
       <section className="configuration__container">
         <form className="configuration__form">
-          {this.renderCourseSelector()}
-          {(course || savedCourse) && this.renderFacultySelector()}
-          {(faculty || savedFaculty) && this.renderGroupSelector()}
-          {(group || savedGroup) && this.renderDaySelector()}
+          {this.renderCourseSelector(data.courses)}
+          {course &&
+            this.renderFacultySelector(
+              data.courses.find(
+                course => course.number === this.state.course.value
+              ).faculties
+            )}
+          {faculty &&
+            this.renderGroupSelector(
+              data.courses
+                .find(course => course.number === this.state.course.value)
+                .faculties.find(
+                  faculty => faculty.name === this.state.faculty.value
+                ).groups
+            )}
+          {/* {group && this.renderDaySelector()} */}
         </form>
         <button className="configuration__reset" onClick={this.handleReset}>
           Reset

@@ -40,7 +40,7 @@ export const fetchScheduleDataRequest = university => {
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify(university)
+    body: JSON.stringify({ university })
   })
     .then(res => res.json())
     .then(responseData => responseData)

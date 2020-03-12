@@ -27,10 +27,10 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const { configuration, fetchScheduleDataAction } = this.props;
-    return configuration.group === prevProps.configuration.group
-      ? null
-      : fetchScheduleDataAction(configuration);
+    // const { configuration } = this.props;
+    // return configuration.group === prevProps.configuration.group
+    //   ? null
+    //   : this.setState();
   }
 
   toggleLoginModal = e => {
@@ -43,6 +43,30 @@ class App extends Component {
     const university = target.querySelector("span").innerHTML;
     this.setState({ isPickerVisible: false });
     this.props.setUniversityAction(university);
+    this.props.fetchScheduleDataAction(university);
+  };
+
+  getScheduleData = () => {
+    const {
+      configuration: { group }
+    } = this.props;
+    if (group && group.value) {
+      const {
+        configuration: {
+          course: { value: courseValue },
+          faculty: { value: facultyValue },
+          group: { value: groupValue }
+        },
+        data
+      } = this.props;
+
+      console.log(courseValue, facultyValue, groupValue);
+      return data.courses
+        .find(course => course.number === courseValue)
+        .faculties.find(faculty => faculty.name === facultyValue)
+        .groups.find(group => group.number === groupValue).lessons;
+    }
+    return null;
   };
 
   renderMainContent = () => {
@@ -52,8 +76,12 @@ class App extends Component {
         {loginModalOpen && (
           <LoginModal toggleLoginModal={this.toggleLoginModal} />
         )}
-        <Header user={true} toggleLoginModal={this.toggleLoginModal} />
-        <MainContent />
+        <Header
+          user={true}
+          toggleLoginModal={this.toggleLoginModal}
+          data={this.props.data}
+        />
+        <MainContent data={this.getScheduleData()} />
       </React.Fragment>
     );
   };

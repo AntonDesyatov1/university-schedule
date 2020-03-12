@@ -21,6 +21,12 @@ export default function reducer(state = initialState, action = {}) {
         universities: action.payload
       };
 
+    case ACTIONS.SET_DATA:
+      return {
+        ...state,
+        data: action.payload
+      };
+
     default:
       return state;
   }
