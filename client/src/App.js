@@ -60,7 +60,6 @@ class App extends Component {
         data
       } = this.props;
 
-      console.log(courseValue, facultyValue, groupValue);
       return data.courses
         .find(course => course.number === courseValue)
         .faculties.find(faculty => faculty.name === facultyValue)

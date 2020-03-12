@@ -9,240 +9,273 @@
             "groups": [
               {
                 "number": 9381,
-                "lessons": {
-                  "week1": {
-                    "monday": [
-                      null,
-                      {
-                        "name": "Physical culture",
-                        "location": null,
-                        "type": null,
-                        "teacher": null
-                      },
-                      {
-                        "name": "Programming",
-                        "location": 5404,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Krinkin" }]
-                      }
-                    ],
-                    "tuesday": [
-                      null,
-                      {
-                        "name": "Mathematical analysis",
-                        "location": 3308,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Kolpakov A.S." }]
-                      },
-                      {
-                        "name": "Algebraic structures",
-                        "location": 3308,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Zelvenski" }]
-                      },
-                      {
-                        "name": "Algebraic structures",
-                        "location": 3308,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Zelvenski" }]
-                      },
-                      {
-                        "name": "Mathematical analysis",
-                        "location": 3427,
-                        "type": "Practice",
-                        "teachers": [{ "name": "Egorov" }]
-                      }
-                    ],
-                    "wednesday": [
-                      {
-                        "name": "Physical culture",
-                        "location": null,
-                        "type": null,
-                        "teachers": null
-                      },
-                      {
-                        "name": "Physics",
-                        "location": 3107,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Levshakov" }]
-                      },
-                      {
-                        "name": "Algebraic structures",
-                        "location": 4210,
-                        "type": "Practice",
-                        "teachers": [{ "name": "Medvedev" }]
-                      }
-                    ],
-                    "thursday": [],
-                    "friday": [
-                      {
-                        "name": "Physics",
-                        "location": "Physics Kafedra",
-                        "type": "Labaratory",
-                        "teachers": [
-                          {
-                            "name": "Pismenski"
-                          },
-                          {
-                            "name": "Loskutnikov"
-                          }
-                        ]
-                      },
-                      {
-                        "name": "Discrete Math",
-                        "location": 3422,
-                        "type": "Practice",
-                        "teachers": [{ "name": "Belenkova" }]
-                      },
-                      {
-                        "name": "Foreign language",
-                        "location": "Foreign Kafedra",
-                        "type": "Practice",
-                        "teachers": null
-                      },
-                      {
-                        "name": "History",
-                        "location": 5427,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Kalashnikov" }]
-                      }
-                    ],
-                    "saturday": [
-                      null,
-                      {
-                        "name": "Discrete Math",
-                        "location": 3308,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Ribin" }]
-                      },
-                      {
-                        "name": "Physics",
-                        "location": 3426,
-                        "type": "Practice",
-                        "teachers": [{ "name": "Titov" }]
-                      },
-                      {
-                        "name": "Programming",
-                        "location": 3402,
-                        "type": "Labaratory",
-                        "teachers": [{ "name": "Berlenko" }]
-                      }
-                    ]
-                  },
-                  "week2": {
-                    "monday": [
-                      null,
-                      {
-                        "name": "Physical culture",
-                        "location": null,
-                        "type": null,
-                        "teacher": null
-                      },
-                      {
-                        "name": "Programming",
-                        "location": 5404,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Krinkin" }]
-                      }
-                    ],
-                    "tuesday": [
-                      null,
-                      {
-                        "name": "Mathematical analysis",
-                        "location": 3308,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Kolpakov A.S." }]
-                      },
-                      {
-                        "name": "Algebraic structures",
-                        "location": 3308,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Zelvenski" }]
-                      },
-                      {
-                        "name": "Mathematical analysis",
-                        "location": 3427,
-                        "type": "Practice",
-                        "teachers": [{ "name": "Egorov" }]
-                      }
-                    ],
-                    "wednesday": [
-                      {
-                        "name": "Physical culture",
-                        "location": null,
-                        "type": null,
-                        "teacher": null
-                      },
-                      {
-                        "name": "Physics",
-                        "location": 3107,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Levshakov" }]
-                      },
-                      {
-                        "name": "Algebraic structures",
-                        "location": 4210,
-                        "type": "Practice",
-                        "teachers": [{ "name": "Medvedev" }]
-                      }
-                    ],
-                    "thursday": [],
-                    "friday": [
-                      null,
-                      {
-                        "name": "Discrete Math",
-                        "location": 3422,
-                        "type": "Practice",
-                        "teachers": [{ "name": "Belenkova" }]
-                      },
-                      {
-                        "name": "Foreign language",
-                        "location": "Foreign Kafedra",
-                        "type": "Practice",
-                        "teachers": null
-                      },
-                      {
-                        "name": "History",
-                        "location": 5427,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Kalashnikov" }]
-                      },
-                      {
-                        "name": "Ecology",
-                        "location": 0,
-                        "type": "Lecture",
-                        "teachers": null
-                      }
-                    ],
-                    "saturday": [
-                      null,
-                      {
-                        "name": "Discrete Math",
-                        "location": 3308,
-                        "type": "Lecture",
-                        "teachers": [{ "name": "Ribin" }]
-                      },
-                      {
-                        "name": "History",
-                        "location": 3427,
-                        "type": "Practice",
-                        "teachers": [{ "name": "Filimonov" }]
-                      },
-                      {
-                        "name": "Programming",
-                        "location": 3402,
-                        "type": "Labaratory",
-                        "teachers": [{ "name": "Berlenko" }]
-                      },
-                      {
-                        "name": "Ecology",
-                        "location": 0,
-                        "type": "Practice",
-                        "teachers": null
-                      }
-                    ]
-                  }
-                }
+                "lessons": [
+                  [
+                    {
+                      "name": "monday",
+                      "lessons": [
+                        null,
+                        {
+                          "name": "Physical culture",
+                          "location": null,
+                          "type": null,
+                          "teacher": null
+                        },
+                        {
+                          "name": "Programming",
+                          "location": 5404,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Krinkin" }]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "tuesday",
+                      "lessons": [
+                        null,
+                        {
+                          "name": "Mathematical analysis",
+                          "location": 3308,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Kolpakov A.S." }]
+                        },
+                        {
+                          "name": "Algebraic structures",
+                          "location": 3308,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Zelvenski" }]
+                        },
+                        {
+                          "name": "Algebraic structures",
+                          "location": 3308,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Zelvenski" }]
+                        },
+                        {
+                          "name": "Mathematical analysis",
+                          "location": 3427,
+                          "type": "Practice",
+                          "teachers": [{ "name": "Egorov" }]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "wednesday",
+                      "lessons": [
+                        {
+                          "name": "Physical culture",
+                          "location": null,
+                          "type": null,
+                          "teachers": null
+                        },
+                        {
+                          "name": "Physics",
+                          "location": 3107,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Levshakov" }]
+                        },
+                        {
+                          "name": "Algebraic structures",
+                          "location": 4210,
+                          "type": "Practice",
+                          "teachers": [{ "name": "Medvedev" }]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "thursday",
+                      "lessons": []
+                    },
+                    {
+                      "name": "friday",
+                      "lessons": [
+                        {
+                          "name": "Physics",
+                          "location": "Physics Kafedra",
+                          "type": "Labaratory",
+                          "teachers": [
+                            {
+                              "name": "Pismenski"
+                            },
+                            {
+                              "name": "Loskutnikov"
+                            }
+                          ]
+                        },
+                        {
+                          "name": "Discrete Math",
+                          "location": 3422,
+                          "type": "Practice",
+                          "teachers": [{ "name": "Belenkova" }]
+                        },
+                        {
+                          "name": "Foreign language",
+                          "location": "Foreign Kafedra",
+                          "type": "Practice",
+                          "teachers": null
+                        },
+                        {
+                          "name": "History",
+                          "location": 5427,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Kalashnikov" }]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "saturday",
+                      "lessons": [
+                        null,
+                        {
+                          "name": "Discrete Math",
+                          "location": 3308,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Ribin" }]
+                        },
+                        {
+                          "name": "Physics",
+                          "location": 3426,
+                          "type": "Practice",
+                          "teachers": [{ "name": "Titov" }]
+                        },
+                        {
+                          "name": "Programming",
+                          "location": 3402,
+                          "type": "Labaratory",
+                          "teachers": [{ "name": "Berlenko" }]
+                        }
+                      ]
+                    }
+                  ],
+                  [
+                    {
+                      "name": "monday",
+                      "lessons": [
+                        null,
+                        {
+                          "name": "Physical culture",
+                          "location": null,
+                          "type": null,
+                          "teacher": null
+                        },
+                        {
+                          "name": "Programming",
+                          "location": 5404,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Krinkin" }]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "tuesday",
+                      "lessons": [
+                        null,
+                        {
+                          "name": "Mathematical analysis",
+                          "location": 3308,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Kolpakov A.S." }]
+                        },
+                        {
+                          "name": "Algebraic structures",
+                          "location": 3308,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Zelvenski" }]
+                        },
+                        {
+                          "name": "Mathematical analysis",
+                          "location": 3427,
+                          "type": "Practice",
+                          "teachers": [{ "name": "Egorov" }]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "wednesday",
+                      "lessons": [
+                        {
+                          "name": "Physical culture",
+                          "location": null,
+                          "type": null,
+                          "teacher": null
+                        },
+                        {
+                          "name": "Physics",
+                          "location": 3107,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Levshakov" }]
+                        },
+                        {
+                          "name": "Algebraic structures",
+                          "location": 4210,
+                          "type": "Practice",
+                          "teachers": [{ "name": "Medvedev" }]
+                        }
+                      ]
+                    },
+                    { "name": "thursday", "lessons": [] },
+                    {
+                      "name": "friday",
+                      "lessons": [
+                        null,
+                        {
+                          "name": "Discrete Math",
+                          "location": 3422,
+                          "type": "Practice",
+                          "teachers": [{ "name": "Belenkova" }]
+                        },
+                        {
+                          "name": "Foreign language",
+                          "location": "Foreign Kafedra",
+                          "type": "Practice",
+                          "teachers": null
+                        },
+                        {
+                          "name": "History",
+                          "location": 5427,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Kalashnikov" }]
+                        },
+                        {
+                          "name": "Ecology",
+                          "location": 0,
+                          "type": "Lecture",
+                          "teachers": null
+                        }
+                      ]
+                    },
+                    {
+                      "name": "saturday",
+                      "lessons": [
+                        null,
+                        {
+                          "name": "Discrete Math",
+                          "location": 3308,
+                          "type": "Lecture",
+                          "teachers": [{ "name": "Ribin" }]
+                        },
+                        {
+                          "name": "History",
+                          "location": 3427,
+                          "type": "Practice",
+                          "teachers": [{ "name": "Filimonov" }]
+                        },
+                        {
+                          "name": "Programming",
+                          "location": 3402,
+                          "type": "Labaratory",
+                          "teachers": [{ "name": "Berlenko" }]
+                        },
+                        {
+                          "name": "Ecology",
+                          "location": 0,
+                          "type": "Practice",
+                          "teachers": null
+                        }
+                      ]
+                    }
+                  ]
+                ]
               },
               {
                 "number": 9382,

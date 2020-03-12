@@ -1,9 +1,17 @@
 import React, { Component } from "react";
 import LessonCard from "../lesson-card";
+import { DAYS } from "../../constants";
 
 import "./main-content.scss";
 
 class MainContent extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      week: 0
+    };
+  }
+
   componentDidUpdate(prevProps) {
     const { university } = this.props.configuration;
     const { prevUniversity } = prevProps.configuration;
@@ -21,33 +29,25 @@ class MainContent extends Component {
   };
 
   renderScheduleData = () => {
-    /*const daysNames = Object.getOwnPropertyNames(data);
-
+    const { data } = this.props;
     return (
-      <div className="main-content__grid">
-        {this.props.configuration.day ? (
-          <React.Fragment>
-            <span className="main-content__day">
-              {this.props.configuration.day.value}
-            </span>
-            <section className="main-content__schedule">
-              Daily schedule here
-            </section>
-          </React.Fragment>
-        ) : (
-          daysNames.map(day => (
+      <section className="main-content">
+        <span className="main-content__week-picker">
+          <button onClick={() => this.setState({ week: 0 })}>week 1</button>
+          <button onClick={() => this.setState({ week: 1 })}>week 2</button>
+        </span>
+        <div className="main-content__grid">
+          {data[this.state.week].map(day => (
             <React.Fragment>
-              <span className="main-content__day">{day}</span>
+              <span className="main-content__day">{day.name}</span>
               <section className="main-content__schedule">
-                {data[day].map(lesson => (
-                  <LessonCard data={lesson} />
-                ))}
+                Daily schedule here
               </section>
             </React.Fragment>
-          ))
-        )}
-      </div>
-    );*/
+          ))}
+        </div>
+      </section>
+    );
   };
 
   renderEmptyData = () => (
@@ -65,9 +65,7 @@ class MainContent extends Component {
             : "main-content__container-full"
         }
       >
-        {this.props.configuration.group
-          ? this.renderScheduleData()
-          : this.renderEmptyData()}
+        {this.props.data ? this.renderScheduleData() : this.renderEmptyData()}
       </main>
     );
   }
