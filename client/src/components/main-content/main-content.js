@@ -41,7 +41,9 @@ class MainContent extends Component {
             <React.Fragment>
               <span className="main-content__day">{day.name}</span>
               <section className="main-content__schedule">
-                Daily schedule here
+                {day.lessons.map(lesson => (
+                  <LessonCard data={lesson} />
+                ))}
               </section>
             </React.Fragment>
           ))}

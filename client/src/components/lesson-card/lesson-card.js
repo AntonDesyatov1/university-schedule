@@ -4,7 +4,19 @@ import "./lesson-card.scss";
 
 class LessonCard extends React.Component {
   render() {
-    return <span className="lesson-card">{this.props.name}</span>;
+    return this.props.data ? (
+      <div className="lesson-card">
+        <span>{this.props.data.name}</span>
+        <span>{this.props.data.location}</span>
+        <span>{this.props.data.type}</span>
+        <span>
+          {this.props.data.teachers &&
+            this.props.data.teachers.map(teacher => (
+              <span>{teacher.name}</span>
+            ))}
+        </span>
+      </div>
+    ) : null;
   }
 }
 
