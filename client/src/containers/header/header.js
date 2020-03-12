@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import Header from "../../components/header";
 import { connect } from "react-redux";
 import { closeConfigAction, openConfigAction } from "../../store/main";
 

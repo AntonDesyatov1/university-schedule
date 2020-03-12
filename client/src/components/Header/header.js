@@ -1,5 +1,5 @@
 import React from "react";
-import Configuration from "../../containers/Configuration/configuration";
+import Configuration from "../../containers/configuration/configuration";
 
 import "./header.scss";
 
