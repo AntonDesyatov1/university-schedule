@@ -42,14 +42,14 @@ class MainContent extends Component {
           <button onClick={() => this.setState({ week: 1 })}>week 2</button>
         </span>
         <div className="main-content__grid">
-          <span>time</span>
+          <span className="main-content__day">time</span>
           {/* <div className="main-content__time-grid"> */}
-          <span>8:00-9:20</span>
-          <span>9:50-11:20</span>
-          <span>11:40-13:15</span>
-          <span>13:45-15:15</span>
-          <span>15:35-16:55</span>
-          <span>17:25-18:55</span>
+          <span className="main-content__time">8:00-9:20</span>
+          <span className="main-content__time">9:50-11:20</span>
+          <span className="main-content__time">11:40-13:15</span>
+          <span className="main-content__time">13:45-15:15</span>
+          <span className="main-content__time">15:35-16:55</span>
+          <span className="main-content__time">17:25-18:55</span>
           {/* </div> */}
           {data[this.state.week].map((day, index) => (
             <React.Fragment>

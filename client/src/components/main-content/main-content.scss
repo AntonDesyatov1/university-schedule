@@ -34,13 +34,14 @@
     &-full {
       width: 100%;
       height: 100%;
+      overflow: auto;
     }
   }
 
   &__grid {
     width: 100%;
     display: grid;
-    grid-template-columns: 0.5fr repeat(6, 1fr);
+    grid-template-columns: 0.2fr repeat(6, 1fr);
     grid-template-rows: repeat(7, 1fr);
     justify-items: stretch;
     align-items: stretch;
@@ -60,6 +61,13 @@
   &__day {
     writing-mode: vertical-rl;
     text-orientation: upright;
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  &__time {
+    text-align: center;
+    border: 1px solid black;
   }
 
   &__schedule {
