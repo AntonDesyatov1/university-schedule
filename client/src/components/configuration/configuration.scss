@@ -18,6 +18,11 @@
     align-items: center;
   }
 
+  &__selector {
+    font-size: 12pt;
+    text-align: center;
+  }
+
   &__select-container {
     height: 10%;
     display: flex;

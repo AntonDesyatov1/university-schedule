@@ -43,7 +43,7 @@ class App extends Component {
   };
 
   onUniversityPick = ({ target }) => {
-    const university = target.querySelector("span").innerHTML;
+    const university = target.innerHTML;
     this.setState({ isPickerVisible: false });
     this.props.setUniversityAction(university);
     this.props.fetchScheduleDataAction(university);
@@ -53,20 +53,26 @@ class App extends Component {
     const {
       configuration: { group }
     } = this.props;
-    if (group && group.value) {
-      const {
-        configuration: {
-          course: { value: courseValue },
-          faculty: { value: facultyValue },
-          group: { value: groupValue }
-        },
-        data
-      } = this.props;
 
-      return data.courses
-        .find(course => course.number === courseValue)
-        .faculties.find(faculty => faculty.name === facultyValue)
-        .groups.find(group => group.number === groupValue).lessons;
+    try {
+      if (group && group.value) {
+        const {
+          configuration: {
+            course: { value: courseValue },
+            faculty: { value: facultyValue },
+            group: { value: groupValue }
+          },
+          data
+        } = this.props;
+
+        return data.courses
+          .find(course => course.number === courseValue)
+          .faculties.find(faculty => faculty.name === facultyValue)
+          .groups.find(group => group.number === groupValue).lessons;
+      }
+    } catch (e) {
+      console.log(group);
+      debugger;
     }
     return null;
   };

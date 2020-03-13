@@ -13,7 +13,13 @@ class Configuration extends Component {
     };
   }
 
+  componentDidMount() {
+    const { course, faculty, group } = this.props;
+    this.setState({ course, faculty, group });
+  }
+
   setConfiguration = () => {
+    console.log(this.state);
     this.props.setConfigurationAction(this.state);
   };
 
@@ -46,7 +52,7 @@ class Configuration extends Component {
             value: faculty.name,
             label: faculty.name
           }))}
-          value={this.state.faculty}
+          value={this.state.faculty || this.props.faculty}
         />
       </div>
     );
@@ -63,7 +69,7 @@ class Configuration extends Component {
             label: group.number
           }))}
           placeholder="Select group"
-          value={this.state.group}
+          value={this.state.group || this.props.group}
         />
       </div>
     );
@@ -81,20 +87,6 @@ class Configuration extends Component {
   //     </div>
   //   );
   // };
-
-  handleUniversityChange = value => {
-    this.setState(
-      {
-        university: value,
-        course: null,
-        faculty: null,
-        group: null,
-        day: null
-      },
-      this.setConfiguration
-    );
-    this.props.fetchScheduleDataAction(value);
-  };
 
   handleCourseChange = value => {
     this.setState(
@@ -115,7 +107,7 @@ class Configuration extends Component {
   handleDayChange = value =>
     this.setState({ day: value }, this.setConfiguration);
 
-  handleReset = () =>
+  handleReset = () => {
     this.setState(
       {
         course: null,
@@ -124,27 +116,36 @@ class Configuration extends Component {
       },
       this.props.resetConfiguartionAction
     );
+  };
 
   render() {
-    const { faculty, course, group } = this.state;
+    let { faculty, course, group } = this.state;
+    const {
+      faculty: savedFaculty,
+      course: savedCourse,
+      group: savedGroup
+    } = this.props;
+    const courseValue =
+      (course && course.value) || (savedCourse && savedCourse.value);
+    const facultyValue =
+      (faculty && faculty.value) || (savedFaculty && savedFaculty.value);
+    const groupValue =
+      (group && group.value) || (savedGroup && savedGroup.value);
     const { data } = this.props;
     return (
       <section className="configuration__container">
         <form className="configuration__form">
           {this.renderCourseSelector(data.courses)}
-          {course &&
+          {courseValue &&
             this.renderFacultySelector(
-              data.courses.find(
-                course => course.number === this.state.course.value
-              ).faculties
+              data.courses.find(course => course.number === courseValue)
+                .faculties
             )}
-          {faculty &&
+          {facultyValue &&
             this.renderGroupSelector(
               data.courses
-                .find(course => course.number === this.state.course.value)
-                .faculties.find(
-                  faculty => faculty.name === this.state.faculty.value
-                ).groups
+                .find(course => course.number === courseValue)
+                .faculties.find(faculty => faculty.name === facultyValue).groups
             )}
           {/* {group && this.renderDaySelector()} */}
         </form>

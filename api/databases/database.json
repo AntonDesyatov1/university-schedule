@@ -537,7 +537,10 @@
                         null
                       ]
                     },
-                    { "name": "thursday", "lesssons": [] },
+                    {
+                      "name": "thursday",
+                      "lessons": [null, null, null, null, null, null]
+                    },
                     {
                       "name": "friday",
                       "lessons": [

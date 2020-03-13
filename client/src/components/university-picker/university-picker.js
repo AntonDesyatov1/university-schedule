@@ -4,7 +4,7 @@ import "./university-picker.scss";
 
 const UniversityPicker = ({ universities, onPick }) => {
   return (
-    <div className="university-picker">
+    <section className="university-picker">
       <div className="university-picker__container">
         {universities &&
           universities.map((uni, index, arr) => (
@@ -19,11 +19,11 @@ const UniversityPicker = ({ universities, onPick }) => {
               <div className="university-picker__img-container">
                 <img src={uni.img} />
               </div>
-              <span>{uni.name}</span>
+              <span className="university-picker__name">{uni.name}</span>
             </div>
           ))}
       </div>
-    </div>
+    </section>
   );
 };
 
