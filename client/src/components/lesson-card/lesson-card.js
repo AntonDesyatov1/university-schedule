@@ -10,9 +10,9 @@ class LessonCard extends React.Component {
   render() {
     return this.props.data ? (
       <div className="lesson-card">
-        <span>Subject: {this.props.data.name}</span>
-        <span>Location: {this.props.data.location}</span>
-        <span>Type: {this.props.data.type}</span>
+        <span>{this.props.data.name}</span>
+        <span>{this.props.data.location}</span>
+        <span>{this.props.data.type}</span>
         <span>
           {this.props.data.teachers && "Teachers: "}
           {this.props.data.teachers &&

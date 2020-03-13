@@ -21,7 +21,7 @@ class Header extends React.Component {
       <header className="header__container">
         <div className="header__toggle-container">
           <button onClick={closeConfigAction} className="header__toggle-off">
-            close
+            X
           </button>
         </div>
         <h1 className="header__logo">University Schedule</h1>
@@ -35,7 +35,7 @@ class Header extends React.Component {
       </header>
     ) : (
       <button className="header__toggle-on" onClick={openConfigAction}>
-        open
+        <i class="fa fa-bars"></i>
       </button>
     );
   }
