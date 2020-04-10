@@ -1,3 +1,4 @@
 # University schedule
 App for creating and managing schedule of universities
-Run with npm start both from **api** and **client** directories
+Do an `npm install`
+Run with `npm start` both from **api** and **client** directories
