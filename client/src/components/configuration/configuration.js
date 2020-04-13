@@ -19,7 +19,6 @@ class Configuration extends Component {
   }
 
   setConfiguration = () => {
-    console.log(this.state);
     this.props.setConfigurationAction(this.state);
   };
 
@@ -132,18 +131,18 @@ class Configuration extends Component {
     const groupValue =
       (group && group.value) || (savedGroup && savedGroup.value);
     const { data } = this.props;
+    console.log(data);
     return (
       <section className="configuration__container">
         <form className="configuration__form">
-          {this.renderCourseSelector(data.courses)}
+          {this.renderCourseSelector(data)}
           {courseValue &&
             this.renderFacultySelector(
-              data.courses.find(course => course.number === courseValue)
-                .faculties
+              data.find(course => course.number === courseValue).faculties
             )}
           {facultyValue &&
             this.renderGroupSelector(
-              data.courses
+              data
                 .find(course => course.number === courseValue)
                 .faculties.find(faculty => faculty.name === facultyValue).groups
             )}

@@ -20,6 +20,7 @@ const mapStateToProps = state => ({
   configuration: state.configuration,
   universities: state.schedule.universities,
   data: state.schedule.data,
+  teachers: state.schedule.teachers,
   university: state.main.university
 });
 

@@ -25,7 +25,7 @@
                           "name": "Programming",
                           "location": 5404,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Krinkin" }]
+                          "teachers": ["Krinkin"]
                         },
                         null,
                         null,
@@ -40,25 +40,25 @@
                           "name": "Mathematical analysis",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Kolpakov A.S." }]
+                          "teachers": ["Kolpakov A.S."]
                         },
                         {
                           "name": "Algebraic structures",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Zelvenski" }]
+                          "teachers": ["Zelvenski"]
                         },
                         {
                           "name": "Algebraic structures",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Zelvenski" }]
+                          "teachers": ["Zelvenski"]
                         },
                         {
                           "name": "Mathematical analysis",
                           "location": 3427,
                           "type": "Practice",
-                          "teachers": [{ "name": "Egorov" }]
+                          "teachers": ["Egorov"]
                         },
                         null
                       ]
@@ -76,13 +76,13 @@
                           "name": "Physics",
                           "location": 3107,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Levshakov" }]
+                          "teachers": ["Levshakov"]
                         },
                         {
                           "name": "Algebraic structures",
                           "location": 4210,
                           "type": "Practice",
-                          "teachers": [{ "name": "Medvedev" }]
+                          "teachers": ["Medvedev"]
                         },
                         null,
                         null,
@@ -100,20 +100,13 @@
                           "name": "Physics",
                           "location": "Physics Kafedra",
                           "type": "Labaratory",
-                          "teachers": [
-                            {
-                              "name": "Pismenski"
-                            },
-                            {
-                              "name": "Loskutnikov"
-                            }
-                          ]
+                          "teachers": ["Pismenski", "Loskutnikov"]
                         },
                         {
                           "name": "Discrete Math",
                           "location": 3422,
                           "type": "Practice",
-                          "teachers": [{ "name": "Belenkova" }]
+                          "teachers": ["Belenkova"]
                         },
                         {
                           "name": "Foreign language",
@@ -125,7 +118,7 @@
                           "name": "History",
                           "location": 5427,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Kalashnikov" }]
+                          "teachers": ["Kalashnikov"]
                         },
                         null,
                         null
@@ -139,19 +132,19 @@
                           "name": "Discrete Math",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Ribin" }]
+                          "teachers": ["Ribin"]
                         },
                         {
                           "name": "Physics",
                           "location": 3426,
                           "type": "Practice",
-                          "teachers": [{ "name": "Titov" }]
+                          "teachers": ["Titov"]
                         },
                         {
                           "name": "Programming",
                           "location": 3402,
                           "type": "Labaratory",
-                          "teachers": [{ "name": "Berlenko" }]
+                          "teachers": ["Berlenko"]
                         },
                         null,
                         null
@@ -173,7 +166,7 @@
                           "name": "Programming",
                           "location": 5404,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Krinkin" }]
+                          "teachers": ["Krinkin"]
                         },
                         null,
                         null,
@@ -188,19 +181,19 @@
                           "name": "Mathematical analysis",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Kolpakov A.S." }]
+                          "teachers": ["Kolpakov A.S."]
                         },
                         {
                           "name": "Algebraic structures",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Zelvenski" }]
+                          "teachers": ["Zelvenski"]
                         },
                         {
                           "name": "Mathematical analysis",
                           "location": 3427,
                           "type": "Practice",
-                          "teachers": [{ "name": "Egorov" }]
+                          "teachers": ["Egorov"]
                         },
                         null,
                         null
@@ -219,13 +212,13 @@
                           "name": "Physics",
                           "location": 3107,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Levshakov" }]
+                          "teachers": ["Levshakov"]
                         },
                         {
                           "name": "Algebraic structures",
                           "location": 4210,
                           "type": "Practice",
-                          "teachers": [{ "name": "Medvedev" }]
+                          "teachers": ["Medvedev"]
                         },
                         null,
                         null,
@@ -244,7 +237,7 @@
                           "name": "Discrete Math",
                           "location": 3422,
                           "type": "Practice",
-                          "teachers": [{ "name": "Belenkova" }]
+                          "teachers": ["Belenkova"]
                         },
                         {
                           "name": "Foreign language",
@@ -256,7 +249,7 @@
                           "name": "History",
                           "location": 5427,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Kalashnikov" }]
+                          "teachers": ["Kalashnikov"]
                         },
                         {
                           "name": "Ecology",
@@ -275,19 +268,19 @@
                           "name": "Discrete Math",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Ribin" }]
+                          "teachers": ["Ribin"]
                         },
                         {
                           "name": "History",
                           "location": 3427,
                           "type": "Practice",
-                          "teachers": [{ "name": "Filimonov" }]
+                          "teachers": ["Filimonov"]
                         },
                         {
                           "name": "Programming",
                           "location": 3402,
                           "type": "Labaratory",
-                          "teachers": [{ "name": "Berlenko" }]
+                          "teachers": ["Berlenko"]
                         },
                         {
                           "name": "Ecology",
@@ -319,22 +312,19 @@
                           "name": "Programming",
                           "location": 5404,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Krinkin" }]
+                          "teachers": ["Krinkin"]
                         },
                         {
                           "name": "Discrete Math",
                           "location": 4301,
                           "type": "Practice",
-                          "teachers": [{ "name": "Chuhanov" }]
+                          "teachers": ["Chuhanov"]
                         },
                         {
                           "name": "Physics",
                           "location": "Physics Kafedra",
                           "type": "Labaratory",
-                          "teachers": [
-                            { "name": "Bogachev" },
-                            { "name": "Morozov" }
-                          ]
+                          "teachers": ["Bogachev", "Morozov"]
                         },
                         null
                       ]
@@ -346,25 +336,25 @@
                           "name": "Kolpakov A.S.",
                           "location": 3308,
                           "type": "Practice",
-                          "teachers": [{ "name": "Kolpakov A.S." }]
+                          "teachers": ["Kolpakov A.S."]
                         },
                         {
                           "name": "Mathematical analysis",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Kolpakov A.S." }]
+                          "teachers": ["Kolpakov A.S."]
                         },
                         {
                           "name": "Algebraic structures",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Zelvenski" }]
+                          "teachers": ["Zelvenski"]
                         },
                         {
                           "name": "Algebraic structures",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Zelvenski" }]
+                          "teachers": ["Zelvenski"]
                         },
                         null,
                         null
@@ -383,13 +373,13 @@
                           "name": "Physics",
                           "location": 3107,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Levshakov" }]
+                          "teachers": ["Levshakov"]
                         },
                         {
                           "name": "Algebraic structures",
                           "location": 3421,
                           "type": "Practice",
-                          "teachers": [{ "name": "Tolkacheva" }]
+                          "teachers": ["Tolkacheva"]
                         },
                         null,
                         null,
@@ -408,7 +398,7 @@
                           "name": "History",
                           "location": 5360,
                           "type": "Practice",
-                          "teachers": [{ "name": "Stogov" }]
+                          "teachers": ["Stogov"]
                         },
                         {
                           "name": "Foreign language",
@@ -420,7 +410,7 @@
                           "name": "History",
                           "location": 5427,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Kalashnikov" }]
+                          "teachers": ["Kalashnikov"]
                         },
                         null,
                         null
@@ -434,13 +424,13 @@
                           "name": "Discrete Math",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Ribin" }]
+                          "teachers": ["Ribin"]
                         },
                         {
                           "name": "Programming",
                           "location": 3402,
                           "type": "Labaratory",
-                          "teachers": [{ "name": "Berlenko" }]
+                          "teachers": ["Berlenko"]
                         },
                         {
                           "name": "Ecology",
@@ -468,19 +458,19 @@
                           "name": "Programming",
                           "location": 5404,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Krinkin" }]
+                          "teachers": ["Krinkin"]
                         },
                         {
                           "name": "Discrete Math",
                           "location": 4301,
                           "type": "Practice",
-                          "teachers": [{ "name": "Chuhanov" }]
+                          "teachers": ["Chuhanov"]
                         },
                         {
                           "name": "Physics",
                           "location": 4209,
                           "type": "Practice",
-                          "teachers": [{ "name": "Bogachev" }]
+                          "teachers": ["Bogachev"]
                         },
                         null
                       ]
@@ -492,19 +482,19 @@
                           "name": "Mathematical analysis",
                           "location": 3308,
                           "type": "Practice",
-                          "teachers": [{ "name": "Kolpakov A.S." }]
+                          "teachers": ["Kolpakov A.S."]
                         },
                         {
                           "name": "Mathematical analysis",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Kolpakov A.S." }]
+                          "teachers": ["Kolpakov A.S."]
                         },
                         {
                           "name": "Algebraic structures",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Zelvenski" }]
+                          "teachers": ["Zelvenski"]
                         },
                         null,
                         null,
@@ -524,13 +514,13 @@
                           "name": "Physics",
                           "location": 3107,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Levshakov" }]
+                          "teachers": ["Levshakov"]
                         },
                         {
                           "name": "Algebraic structures",
                           "location": 3421,
                           "type": "Practice",
-                          "teachers": [{ "name": "Tolkacheva" }]
+                          "teachers": ["Tolkacheva"]
                         },
                         null,
                         null,
@@ -556,7 +546,7 @@
                           "name": "History",
                           "location": 5427,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Kalashnikov" }]
+                          "teachers": ["Kalashnikov"]
                         },
                         {
                           "name": "Ecology",
@@ -575,13 +565,13 @@
                           "name": "Discrete Math",
                           "location": 3308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Ribin" }]
+                          "teachers": ["Ribin"]
                         },
                         {
                           "name": "Programming",
                           "location": 3402,
                           "type": "Labaratory",
-                          "teachers": [{ "name": "Berlenko" }]
+                          "teachers": ["Berlenko"]
                         },
                         null,
                         null,
@@ -622,7 +612,7 @@
                           "name": "Engineering and computer graphics",
                           "location": 5576,
                           "type": "Practice",
-                          "teachers": [{ "name": "Teplyakova" }]
+                          "teachers": ["Teplyakova"]
                         }
                       ]
                     },
@@ -634,16 +624,13 @@
                           "name": "Physics",
                           "location": "Physics kafedra",
                           "type": "Labaratory",
-                          "teachers": [
-                            { "name": "Kuzmina" },
-                            { "name": "Cheremuhina" }
-                          ]
+                          "teachers": ["Kuzmina", "Cheremuhina"]
                         },
                         {
                           "name": "Physics",
                           "location": 3107,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Malishev" }]
+                          "teachers": ["Malishev"]
                         },
                         {
                           "name": "Foreign language",
@@ -655,7 +642,7 @@
                           "name": "Engineering and computer graphics",
                           "location": 5427,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Maksimova" }]
+                          "teachers": ["Maksimova"]
                         },
                         null
                       ]
@@ -669,7 +656,7 @@
                           "name": "Introduction to the specialty",
                           "location": 1158,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Lisenko" }]
+                          "teachers": ["Lisenko"]
                         },
                         {
                           "name": "Physical culture",
@@ -681,13 +668,13 @@
                           "name": "Mathematical analysis",
                           "location": 3426,
                           "type": "Practice",
-                          "teachers": [{ "name": "Bitykov" }]
+                          "teachers": ["Bitykov"]
                         },
                         {
                           "name": "Algebra and geometry",
                           "location": 3426,
                           "type": "Practice",
-                          "teachers": [{ "name": "Bitykov" }]
+                          "teachers": ["Bitykov"]
                         }
                       ]
                     },
@@ -700,19 +687,19 @@
                           "name": "Information Technology",
                           "location": 1245,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Andreeva" }]
+                          "teachers": ["Andreeva"]
                         },
                         {
                           "name": "Information Technology",
                           "location": 2430,
                           "type": "Practice",
-                          "teachers": [{ "name": "Andreeva" }]
+                          "teachers": ["Andreeva"]
                         },
                         {
                           "name": "Phylosophy",
                           "location": 5427,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Frolov" }]
+                          "teachers": ["Frolov"]
                         },
                         null
                       ]
@@ -726,25 +713,25 @@
                           "name": "Physics",
                           "location": 6208,
                           "type": "Practice",
-                          "teachers": [{ "name": "Varnashaev" }]
+                          "teachers": ["Varnashaev"]
                         },
                         {
                           "name": "Mathematical analysis",
                           "location": 6308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Bitykov" }]
+                          "teachers": ["Bitykov"]
                         },
                         {
                           "name": "Mathematical analysis",
                           "location": 6311,
                           "type": "Practice",
-                          "teachers": [{ "name": "Bitykov" }]
+                          "teachers": ["Bitykov"]
                         },
                         {
                           "name": "Phylosophy",
                           "location": 6310,
                           "type": "Practice",
-                          "teachers": [{ "name": "Moskovchuk" }]
+                          "teachers": ["Moskovchuk"]
                         }
                       ]
                     },
@@ -776,7 +763,7 @@
                           "name": "Engineering and computer graphics",
                           "location": 5576,
                           "type": "Practice",
-                          "teachers": [{ "name": "Teplyakova" }]
+                          "teachers": ["Teplyakova"]
                         }
                       ]
                     },
@@ -788,16 +775,13 @@
                           "name": "Physics",
                           "location": "Physics kafedra",
                           "type": "Labaratory",
-                          "teachers": [
-                            { "name": "Kuzmina" },
-                            { "name": "Cheremuhina" }
-                          ]
+                          "teachers": ["Kuzmina", "Cheremuhina"]
                         },
                         {
                           "name": "Physics",
                           "location": 3107,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Malishev" }]
+                          "teachers": ["Malishev"]
                         },
                         {
                           "name": "Foreign language",
@@ -825,13 +809,13 @@
                           "name": "Mathematical analysis",
                           "location": 3238,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Bitykov" }]
+                          "teachers": ["Bitykov"]
                         },
                         {
                           "name": "Algebra and geometry",
                           "location": 3426,
                           "type": "Practice",
-                          "teachers": [{ "name": "Bitykov" }]
+                          "teachers": ["Bitykov"]
                         }
                       ]
                     },
@@ -843,25 +827,25 @@
                           "name": "Information Technology",
                           "location": 2430,
                           "type": "Labaratory",
-                          "teachers": [{ "name": "Andreeva" }]
+                          "teachers": ["Andreeva"]
                         },
                         {
                           "name": "Information Technology",
                           "location": 1245,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Andreeva" }]
+                          "teachers": ["Andreeva"]
                         },
                         {
                           "name": "Information Technology",
                           "location": 2430,
                           "type": "Practice",
-                          "teachers": [{ "name": "Andreeva" }]
+                          "teachers": ["Andreeva"]
                         },
                         {
                           "name": "Phylosophy",
                           "location": 5427,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Frolov" }]
+                          "teachers": ["Frolov"]
                         },
                         null
                       ]
@@ -875,25 +859,25 @@
                           "name": "Physics",
                           "location": 6208,
                           "type": "Practice",
-                          "teachers": [{ "name": "Varnashaev" }]
+                          "teachers": ["Varnashaev"]
                         },
                         {
                           "name": "Mathematical analysis",
                           "location": 6308,
                           "type": "Lecture",
-                          "teachers": [{ "name": "Bitykov" }]
+                          "teachers": ["Bitykov"]
                         },
                         {
                           "name": "Mathematical analysis",
                           "location": 6311,
                           "type": "Practice",
-                          "teachers": [{ "name": "Bitykov" }]
+                          "teachers": ["Bitykov"]
                         },
                         {
                           "name": "Phylosophy",
                           "location": 6310,
                           "type": "Practice",
-                          "teachers": [{ "name": "Moskovchuk" }]
+                          "teachers": ["Moskovchuk"]
                         }
                       ]
                     },
@@ -907,6 +891,18 @@
             ]
           }
         ]
+      }
+    ],
+    "teachers": [
+      {
+        "name": "Krinkin",
+        "img": "https://etu.ru/assets/cache/images/Faculty-FKTI/MO_izm/400x400-krinkin.3f3.png",
+        "link": "https://etu.ru/ru/fakultety/fakultet-kompyuternyh-tehnologiy-i-informatiki/sostav-fakulteta/kafedra-matematicheskogo-obespecheniya-i-primeneniya-evm/duplicate-of-rukovodstvo-sostav-kafedry/krinkin-kirill-vladimirovich"
+      },
+      {
+        "name": "Kolpakov A.S.",
+        "img": "https://etu.ru/assets/cache/images/ru/postupaushim/priyomnaya-komissiya-universiteta/400x400-kolpakov.837.jpg",
+        "link": null
       }
     ]
   }

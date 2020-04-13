@@ -4,6 +4,7 @@ import { fetchScheduleDataRequest, fetchUniversitiesRequest } from "../api";
 
 const initialState = {
   universities: null,
+  teachers: [],
   data: null
 };
 
@@ -24,7 +25,8 @@ export default function reducer(state = initialState, action = {}) {
     case ACTIONS.SET_DATA:
       return {
         ...state,
-        data: action.payload
+        data: action.payload.courses,
+        teachers: action.payload.teachers
       };
 
     default:
@@ -64,6 +66,7 @@ export const fetchScheduleDataAction = university => async dispatch => {
   dispatch(setLoadingTrueAction());
   try {
     const data = await fetchScheduleDataRequest(university);
+    console.log(data);
     dispatch(setDataAction(data));
     dispatch(setLoadingFalseAction());
   } catch (e) {}
