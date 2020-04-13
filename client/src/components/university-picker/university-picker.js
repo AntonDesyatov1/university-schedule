@@ -17,7 +17,7 @@ const UniversityPicker = ({ universities, onPick }) => {
               onClick={onPick}
             >
               <div className="university-picker__img-container">
-                <img src={uni.img} />
+                <img src={uni.img} id={uni.name} />
               </div>
               <span className="university-picker__name">{uni.name}</span>
             </div>

@@ -8,7 +8,7 @@ import {
 const initialState = {
   user: null,
   university: null,
-  isLoading: false,
+  isLoading: true,
   error: null,
   isConfigOpen: false
 };

@@ -5,3 +5,10 @@ export const TOGGLE_CN = [
   "close-button",
   "subject-modal__background"
 ];
+
+export const LOADER_STYLES = {
+  position: "fixed",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)"
+};

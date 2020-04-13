@@ -43,11 +43,11 @@ const setUniversitiesDataAction = data => ({
 });
 
 export const fetchUniversitiesAction = () => async dispatch => {
-  dispatch(setLoadingTrueAction);
+  dispatch(setLoadingTrueAction());
   try {
     const data = await fetchUniversitiesRequest();
     dispatch(setUniversitiesDataAction(data));
-    dispatch(setLoadingFalseAction);
+    dispatch(setLoadingFalseAction());
   } catch (e) {}
 };
 

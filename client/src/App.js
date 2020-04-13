@@ -4,8 +4,9 @@ import Header from "./containers/header/header";
 import MainContent from "./containers/main-content/main-content";
 import LoginModal from "./components/login-modal";
 import UniversityPicker from "./components/university-picker";
-import { TOGGLE_CN } from "./constants/class-names";
+import { TOGGLE_CN, LOADER_STYLES } from "./constants/class-names";
 import SubjectModal from "./components/subject-modal";
+import BounceLoader from "react-spinners/BounceLoader";
 
 import "./App.scss";
 
@@ -29,13 +30,6 @@ class App extends Component {
     console.log("rendering loading");
   }
 
-  componentDidUpdate(prevProps) {
-    // const { configuration } = this.props;
-    // return configuration.group === prevProps.configuration.group
-    //   ? null
-    //   : this.setState();
-  }
-
   toggleLoginModal = e => {
     if (TOGGLE_CN.includes(e.target.className)) {
       this.setState({ loginModalOpen: !this.state.loginModalOpen });
@@ -43,10 +37,11 @@ class App extends Component {
   };
 
   onUniversityPick = ({ target }) => {
-    const university = target.innerHTML;
+    const { setUniversityAction, fetchScheduleDataAction } = this.props;
+    const university = target.id || target.innerHTML;
     this.setState({ isPickerVisible: false });
-    this.props.setUniversityAction(university);
-    this.props.fetchScheduleDataAction(university);
+    setUniversityAction(university);
+    fetchScheduleDataAction(university);
   };
 
   getScheduleData = () => {
@@ -119,15 +114,11 @@ class App extends Component {
   };
 
   render() {
-    const {
-      configuration: { day },
-      universities,
-      university,
-      setUniversityAction
-    } = this.props;
+    const { universities, university, isLoading } = this.props;
     const { isPickerVisible } = this.state;
     return (
       <div className="app-wrapper">
+        <BounceLoader loading={isLoading} css={LOADER_STYLES} size={150} />
         {isPickerVisible && (
           <UniversityPicker
             universities={universities}
