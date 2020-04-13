@@ -8,12 +8,17 @@
 
   &__week-picker {
     display: flex;
-    width: 10%;
+    margin-bottom: 4%;
+    justify-content: space-between;
+    width: 20%;
     height: 10%;
     border: 1px solid black;
 
     & > button {
+      width: 50%;
+      height: 100%;
       border: none;
+      cursor: pointer;
     }
   }
 
@@ -30,11 +35,13 @@
     overflow: auto;
     width: 80%;
     padding: 5%;
+    display: flex;
 
     &-full {
       width: 100%;
       height: 100%;
       overflow: auto;
+      display: flex;
     }
   }
 
@@ -42,32 +49,31 @@
     width: 100%;
     display: grid;
     grid-template-columns: 0.2fr repeat(6, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: 0.5fr repeat(6, 1fr);
     justify-items: stretch;
     align-items: stretch;
     justify-content: stretch;
     align-content: stretch;
-  }
-
-  &__time-grid {
-    width: 100%;
-    display: grid;
-    height: 100%;
-    grid-template-columns: repeat(5, 1fr);
-    justify-items: center;
-    align-items: center;
+    font-size: 12pt;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
   }
 
   &__day {
     writing-mode: vertical-rl;
     text-orientation: upright;
-    border: 1px solid black;
     text-align: center;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
   }
 
   &__time {
-    text-align: center;
-    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
   }
 
   &__schedule {

@@ -52,6 +52,8 @@
   }
 
   &__img-container + span {
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
