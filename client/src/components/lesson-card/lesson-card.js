@@ -17,9 +17,7 @@ class LessonCard extends React.Component {
           <span className="lesson-card__teachers">
             {this.props.data.teachers && "Teachers: "}
             {this.props.data.teachers &&
-              this.props.data.teachers.map(teacher => (
-                <span>{teacher.name}</span>
-              ))}
+              this.props.data.teachers.map(teacher => <span>{teacher}</span>)}
           </span>
         </div>
         <button onClick={this.sendData}>Details</button>

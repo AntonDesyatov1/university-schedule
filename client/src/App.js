@@ -61,7 +61,7 @@ class App extends Component {
           data
         } = this.props;
 
-        return data.courses
+        return data
           .find(course => course.number === courseValue)
           .faculties.find(faculty => faculty.name === facultyValue)
           .groups.find(group => group.number === groupValue).lessons;
@@ -73,8 +73,19 @@ class App extends Component {
     return null;
   };
 
-  openSubjectModal = data =>
-    this.setState({ isSubjectModalVisible: true, subjectModalMetadata: data });
+  openSubjectModal = data => {
+    const { teachers } = this.props;
+    let teachersProp = [];
+    data.teachers.forEach(teacherName =>
+      teachers.forEach(teacher =>
+        teacherName === teacher.name ? teachersProp.push(teacher) : null
+      )
+    );
+    this.setState({
+      isSubjectModalVisible: true,
+      subjectModalMetadata: { ...data, teachers: teachersProp }
+    });
+  };
 
   closeSubjectModal = e => {
     if (TOGGLE_CN.includes(e.target.className)) {

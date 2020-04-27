@@ -31,7 +31,41 @@
 
   &__description {
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     height: 90%;
+  }
+
+  &__metadata {
+    height: 60%;
+    overflow: auto;
+    display: flex;
+  }
+
+  &__teacher-img-container {
+    height: 80px;
+    width: 80px;
+    border: 1px solid black;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__teachers {
+    display: flex;
+    padding-top: 5%;
+  }
+
+  &__teacher-card {
     display: flex;
     flex-direction: column;
   }
