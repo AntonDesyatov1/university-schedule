@@ -16,7 +16,7 @@ class App extends Component {
 
     this.state = {
       loginModalOpen: false,
-      isPickerVisible: true,
+      isPickerVisible: false,
       isSubjectModalVisible: false,
       subjectModalMetadata: null
     };
@@ -24,6 +24,7 @@ class App extends Component {
 
   componentDidMount() {
     this.props.fetchUniversitiesAction();
+    this.setState({ isPickerVisible: true });
   }
 
   renderLoading() {
@@ -116,6 +117,7 @@ class App extends Component {
   render() {
     const { universities, university, isLoading } = this.props;
     const { isPickerVisible } = this.state;
+    console.log(isPickerVisible);
     return (
       <div className="app-wrapper">
         <BounceLoader loading={isLoading} css={LOADER_STYLES} size={150} />
