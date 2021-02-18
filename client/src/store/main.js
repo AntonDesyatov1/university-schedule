@@ -1,9 +1,4 @@
 import { ACTIONS } from "../constants/actions";
-import {
-  loginUserRequest,
-  fetchUserDataRequest,
-  signupUserRequest,
-} from "../api";
 
 const initialState = {
   user: null,

@@ -1,10 +1,15 @@
 .university-picker {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   height: 100%;
   width: 100%;
-  background-color: rgba(128, 127, 125, 0.5);
+  align-content: center;
+
+  &__header {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 2rem;
+  }
 
   &__container {
     display: flex;
@@ -20,7 +25,7 @@
   &__university-card {
     display: flex;
     width: 100%;
-    border-bottom: 1px solid black;
+    border: 1px solid black;
 
     &-last {
       display: flex;
