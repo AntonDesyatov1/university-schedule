@@ -1,38 +1,27 @@
 import App from "../../App";
 import { connect } from "react-redux";
-import {
-  loginUserAction,
-  clearErrorsAction,
-  logoutAction,
-  fetchUserDataAction,
-  signupUserAction,
-  setUniversityAction
-} from "../../store/main";
+import { setUniversityAction } from "../../store/main";
 import {
   fetchScheduleDataAction,
-  fetchUniversitiesAction
+  fetchUniversitiesAction,
 } from "../../store/schedule";
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   isLoading: state.main.isLoading,
-  user: state.main.user,
+  user: state.user.name,
+  loggedIn: state.user.loggedIn,
   error: state.main.error,
   configuration: state.configuration,
   universities: state.schedule.universities,
   data: state.schedule.data,
   teachers: state.schedule.teachers,
-  university: state.main.university
+  university: state.main.university,
 });
 
 const mapDispatchToProps = {
-  loginUserAction,
-  clearErrorsAction,
-  logoutAction,
-  fetchUserDataAction,
-  signupUserAction,
   fetchScheduleDataAction,
   fetchUniversitiesAction,
-  setUniversityAction
+  setUniversityAction,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

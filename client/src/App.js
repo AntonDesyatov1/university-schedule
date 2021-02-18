@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import Header from "./containers/header/header";
-// import MainContent from "./components/main-content";
 import MainContent from "./containers/main-content/main-content";
-import LoginModal from "./components/login-modal";
+import LoginModal from "./containers/login-modal/login-modal";
 import UniversityPicker from "./components/university-picker";
 import { TOGGLE_CN, LOADER_STYLES } from "./constants/class-names";
 import SubjectModal from "./components/subject-modal";
@@ -18,7 +17,7 @@ class App extends Component {
       loginModalOpen: false,
       isPickerVisible: false,
       isSubjectModalVisible: false,
-      subjectModalMetadata: null
+      subjectModalMetadata: null,
     };
   }
 
@@ -31,7 +30,7 @@ class App extends Component {
     console.log("rendering loading");
   }
 
-  toggleLoginModal = e => {
+  toggleLoginModal = (e) => {
     if (TOGGLE_CN.includes(e.target.className)) {
       this.setState({ loginModalOpen: !this.state.loginModalOpen });
     }
@@ -42,12 +41,12 @@ class App extends Component {
     const university = target.id || target.innerHTML;
     this.setState({ isPickerVisible: false });
     setUniversityAction(university);
-    fetchScheduleDataAction(university);
+    // fetchScheduleDataAction(university);
   };
 
   getScheduleData = () => {
     const {
-      configuration: { group }
+      configuration: { group },
     } = this.props;
 
     try {
@@ -56,15 +55,15 @@ class App extends Component {
           configuration: {
             course: { value: courseValue },
             faculty: { value: facultyValue },
-            group: { value: groupValue }
+            group: { value: groupValue },
           },
-          data
+          data,
         } = this.props;
 
         return data
-          .find(course => course.number === courseValue)
-          .faculties.find(faculty => faculty.name === facultyValue)
-          .groups.find(group => group.number === groupValue).lessons;
+          .find((course) => course.number === courseValue)
+          .faculties.find((faculty) => faculty.name === facultyValue)
+          .groups.find((group) => group.number === groupValue).lessons;
       }
     } catch (e) {
       debugger;
@@ -72,39 +71,34 @@ class App extends Component {
     return null;
   };
 
-  openSubjectModal = data => {
+  openSubjectModal = (data) => {
     const { teachers } = this.props;
     let teachersProp = [];
-    data.teachers.forEach(teacherName =>
-      teachers.forEach(teacher =>
-        teacherName === teacher.name ? teachersProp.push(teacher) : null
-      )
+    data.teachers.forEach((teacherName) =>
+      teachers.forEach((teacher) =>
+        teacherName === teacher.name ? teachersProp.push(teacher) : null,
+      ),
     );
     this.setState({
       isSubjectModalVisible: true,
-      subjectModalMetadata: { ...data, teachers: teachersProp }
+      subjectModalMetadata: { ...data, teachers: teachersProp },
     });
   };
 
-  closeSubjectModal = e => {
+  closeSubjectModal = (e) => {
     if (TOGGLE_CN.includes(e.target.className)) {
       this.setState({
-        isSubjectModalVisible: false
+        isSubjectModalVisible: false,
       });
     }
   };
 
   renderMainContent = () => {
-    const {
-      loginModalOpen,
-      isSubjectModalVisible,
-      subjectModalMetadata
-    } = this.state;
+    const { isSubjectModalVisible, subjectModalMetadata } = this.state;
+    const { loggedIn } = this.props;
     return (
       <React.Fragment>
-        {loginModalOpen && (
-          <LoginModal toggleLoginModal={this.toggleLoginModal} />
-        )}
+        {!loggedIn && <LoginModal />}
         {isSubjectModalVisible && (
           <SubjectModal
             {...subjectModalMetadata}
@@ -116,10 +110,12 @@ class App extends Component {
           toggleLoginModal={this.toggleLoginModal}
           data={this.props.data}
         />
-        <MainContent
-          data={this.getScheduleData()}
-          openSubjectModal={this.openSubjectModal}
-        />
+        {loggedIn && (
+          <MainContent
+            data={this.getScheduleData()}
+            openSubjectModal={this.openSubjectModal}
+          />
+        )}
       </React.Fragment>
     );
   };
@@ -127,7 +123,6 @@ class App extends Component {
   render() {
     const { universities, university, isLoading } = this.props;
     const { isPickerVisible } = this.state;
-    console.log(isPickerVisible);
     return (
       <div className="app-wrapper">
         <BounceLoader loading={isLoading} css={LOADER_STYLES} size={150} />
