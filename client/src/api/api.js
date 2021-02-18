@@ -33,7 +33,6 @@ export const loginUserRequest = (login, password) => {
 };
 
 export const fetchScheduleDataRequest = university => {
-  console.log(university);
   return fetch("http://localhost:9000/fetchScheduleData", {
     method: "POST",
     mode: "cors",

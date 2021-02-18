@@ -5,13 +5,11 @@ var fs = require("fs");
 var db = JSON.parse(fs.readFileSync("./database.json"));
 
 // use child.stdout.setEncoding('utf8'); if you want text chunks
-router.get("/", function(req, res, next) {
-  console.log(db);
+router.get("/", function (req, res, next) {
   res.json(db.comments);
 });
 
-router.post("/", function(req, res, next) {
-  console.log(req.body);
+router.post("/", function (req, res, next) {
   let { title, comment, author } = req.body;
   db.images
     .find(image => image.title == title)

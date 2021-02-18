@@ -66,7 +66,6 @@ export const fetchScheduleDataAction = university => async dispatch => {
   dispatch(setLoadingTrueAction());
   try {
     const data = await fetchScheduleDataRequest(university);
-    console.log(data);
     dispatch(setDataAction(data));
     dispatch(setLoadingFalseAction());
   } catch (e) {}

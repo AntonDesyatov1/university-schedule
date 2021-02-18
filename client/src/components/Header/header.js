@@ -1,13 +1,9 @@
 import React from "react";
-import Configuration from "../../containers/configuration/configuration";
+import Configuration from "../../containers/configuration";
 
 import "./header.scss";
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const {
       isConfigOpen,

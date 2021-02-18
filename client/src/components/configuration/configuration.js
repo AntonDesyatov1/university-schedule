@@ -131,7 +131,6 @@ class Configuration extends Component {
     const groupValue =
       (group && group.value) || (savedGroup && savedGroup.value);
     const { data } = this.props;
-    console.log(data);
     return (
       <section className="configuration__container">
         <form className="configuration__form">

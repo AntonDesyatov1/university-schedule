@@ -6,7 +6,7 @@ import registerServiceWorker from "./registerServiceWorker";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "./store/root";
-import ReduxThunk  from "redux-thunk";
+import ReduxThunk from "redux-thunk";
 const middlewares = [ReduxThunk];
 const composeEnhancers =
   (typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||

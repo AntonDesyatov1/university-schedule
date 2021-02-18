@@ -67,7 +67,6 @@ class App extends Component {
           .groups.find(group => group.number === groupValue).lessons;
       }
     } catch (e) {
-      console.log(group);
       debugger;
     }
     return null;
