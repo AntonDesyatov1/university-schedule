@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { ERRORS } from "../../constants";
-import { createErrorAction } from "../../store/main";
 
 import "./login-modal.scss";
 
@@ -43,43 +41,46 @@ class LoginModal extends Component {
   render() {
     const { id, password } = this.state;
     return (
-      <div
-        className="login-modal__background"
-        onClick={this.props.toggleLoginModal}
-      >
-        <section className="login-modal">
-          <span className="login-modal__header">
-            <h3 className="login-modal__header-text">
-              Login into your university account
-            </h3>
-          </span>
-          <form className="login-modal__form">
-            <div className="login-modal__item">
-              <label for="studentId">Student ID:</label>
-              <input
-                onChange={this.handleIdInput}
-                name="studentId"
-                placeholder="Enter your student ID"
-                value={id}
-              />
-            </div>
-            <div className="login-modal__item">
-              <label for="password">Student Password:</label>
-              <input
-                onChange={this.handlePasswordInput}
-                name="password"
-                placeholder="Enter your password"
-                type="password"
-                value={password}
-              />
-            </div>
+      <section className="login-modal">
+        <span className="login-modal__header">
+          <h3 className="login-modal__header-text">
+            Login into your university account
+          </h3>
+        </span>
+        <form className="login-modal__form">
+          <div className="login-modal__item">
+            <label className="login-modal__label" for="studentId">
+              Student ID:
+            </label>
+            <input
+              className="login-modal__input"
+              onChange={this.handleIdInput}
+              name="studentId"
+              placeholder="Enter your student ID"
+              value={id}
+            />
+          </div>
+          <div className="login-modal__item">
+            <label className="login-modal__label" for="password">
+              Student Password:
+            </label>
+            <input
+              className="login-modal__input"
+              onChange={this.handlePasswordInput}
+              name="password"
+              placeholder="Enter your password"
+              type="password"
+              value={password}
+            />
+          </div>
 
-            {this.props.error && <div className="login-modal__error"></div>}
+          {this.props.error && <div className="login-modal__error"></div>}
 
-            <button onClick={this.checkInput}>Log in</button>
-          </form>
-        </section>
-      </div>
+          <button className="login-modal__button" onClick={this.checkInput}>
+            Log in
+          </button>
+        </form>
+      </section>
     );
   }
 }
