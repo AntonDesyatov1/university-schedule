@@ -1,11 +1,21 @@
 var express = require("express");
 var router = express.Router();
-var fs = require("fs");
+const connect = require("../config/my-sql-connection");
+const database = connect();
 
-var db = JSON.parse(fs.readFileSync("./databases/universitiesDB.json"));
+const GET_UNIVERSITIES_QUERY = "SELECT * FROM universities";
+const getUniversityTable = new Promise((resolve, reject) =>
+  database.connect((err) => {
+    err
+      ? console.log(err)
+      : database.query(GET_UNIVERSITIES_QUERY, (err, result, fields) =>
+          resolve(result),
+        );
+  }),
+);
 
-router.get("/", function (req, res, next) {
-  return res.status(200).send(db.universities);
-});
+router.get("/", (req, res, next) =>
+  getUniversityTable.then((universities) => res.status(200).send(universities)),
+);
 
 module.exports = router;
