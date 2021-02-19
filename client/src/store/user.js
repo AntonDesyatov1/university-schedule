@@ -1,10 +1,17 @@
+import axios from "axios";
 import { ACTIONS } from "../constants/actions";
-import { loginUserRequest } from "../api";
+import {
+  setLoadingTrue,
+  setLoadingFalse,
+  setScheduleData,
+} from "../store/main";
 
 const initialState = {
-  loggedIn: false,
-  name: null,
-  data: null,
+  data: {
+    university: null,
+    loggedIn: false,
+  },
+  error: null,
 };
 
 export default function reducer(state = initialState, action = {}) {
@@ -12,50 +19,65 @@ export default function reducer(state = initialState, action = {}) {
     case ACTIONS.LOGIN_USER_SUCCESSFUL:
       return {
         ...state,
-        data: action.payload.data,
-        loggedIn: true,
+        data: { ...action.payload, loggedIn: true },
       };
 
     case ACTIONS.LOGIN_USER_FAILURE:
       return {
         ...state,
-        error: action.payload.data,
+        error: action.payload.error,
+      };
+
+    case ACTIONS.SET_UNIVERSITY_ACTION:
+      return {
+        ...state,
+        data: { ...state.data, university: action.payload },
       };
     default:
       return state;
   }
 }
 
-export const setLoadingTrueAction = () => ({
-  type: ACTIONS.LOADING_STATUS_TRUE,
+export const setUniversity = (university) => ({
+  type: ACTIONS.SET_UNIVERSITY_ACTION,
+  payload: university,
+});
+
+export const userLoginFailure = (error) => ({
+  type: ACTIONS.LOGIN_USER_FAILURE,
   payload: {
-    isLoading: true,
+    error,
   },
 });
 
-export const setLoadingFalseAction = () => ({
-  type: ACTIONS.LOADING_STATUS_FALSE,
-  payload: {
-    isLoading: false,
-  },
-});
-
-export const loginUserAction = (login, password) => async (dispatch) => {
-  dispatch(setLoadingTrueAction());
+export const loginUser = (login, password, university) => async (dispatch) => {
+  dispatch(setLoadingTrue());
   try {
-    const [data] = await loginUserRequest(login, password);
-    dispatch(setUserAction(data));
-    localStorage.setItem("user", data.login);
+    const headers = { login, password, university };
+    const { data } = await axios.get(`http://localhost:9000/loginUser`, {
+      headers,
+    });
+    dispatch(setUserData(data));
+    dispatch(setUniversity(university));
+    localStorage.setItem("user", login);
+    localStorage.setItem("password", password);
+    localStorage.setItem("university", university);
 
-    dispatch(setLoadingFalseAction());
+    const { data: scheduleData } = await axios.get(
+      "http://localhost:9000/fetchScheduleData",
+      {
+        headers: { group: data.groupNumber },
+      },
+    );
+    dispatch(setScheduleData(scheduleData));
+    dispatch(setLoadingFalse());
   } catch (e) {
-    console.log(e);
+    dispatch(userLoginFailure(e));
+    dispatch(setLoadingFalse());
   }
 };
 
-export const setUserAction = (data) => ({
+export const setUserData = (payload) => ({
   type: ACTIONS.LOGIN_USER_SUCCESSFUL,
-  payload: {
-    data,
-  },
+  payload,
 });

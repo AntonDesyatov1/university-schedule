@@ -27,7 +27,7 @@ class LoginModal extends Component {
   checkInput = (e) => {
     e.preventDefault();
     const { id, password } = this.state;
-    const { createErrorAction, loginUserAction } = this.props;
+    const { createErrorAction, loginUser, university } = this.props;
     if (!id) {
       createErrorAction(ERRORS.EMPTY_ID);
     }
@@ -35,11 +35,12 @@ class LoginModal extends Component {
       createErrorAction(ERRORS.EMPTY_PASSWORD);
     }
 
-    return loginUserAction(id, password);
+    return loginUser(id, password, university);
   };
 
   render() {
     const { id, password } = this.state;
+    const { error } = this.props;
     return (
       <section className="login-modal">
         <span className="login-modal__header">
@@ -48,6 +49,7 @@ class LoginModal extends Component {
           </h3>
         </span>
         <form className="login-modal__form">
+          {error && <div className="login-modal__error">{error}</div>}
           <div className="login-modal__item">
             <label className="login-modal__label" for="studentId">
               Student ID:
@@ -73,9 +75,6 @@ class LoginModal extends Component {
               value={password}
             />
           </div>
-
-          {this.props.error && <div className="login-modal__error"></div>}
-
           <button className="login-modal__button" onClick={this.checkInput}>
             Log in
           </button>

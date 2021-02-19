@@ -22,8 +22,16 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchUniversitiesAction();
-    this.setState({ isPickerVisible: true });
+    const { loginUser, fetchUniversities } = this.props;
+    if (localStorage.getItem("user")) {
+      const login = localStorage.getItem("user");
+      const password = localStorage.getItem("password");
+      const university = localStorage.getItem("university");
+      loginUser(login, password, university);
+    } else {
+      fetchUniversities();
+      this.setState({ isPickerVisible: true });
+    }
   }
 
   renderLoading() {
@@ -37,38 +45,10 @@ class App extends Component {
   };
 
   onUniversityPick = ({ target }) => {
-    const { setUniversityAction, fetchScheduleDataAction } = this.props;
+    const { setUniversity } = this.props;
     const university = target.id || target.innerHTML;
     this.setState({ isPickerVisible: false });
-    setUniversityAction(university);
-    // fetchScheduleDataAction(university);
-  };
-
-  getScheduleData = () => {
-    const {
-      configuration: { group },
-    } = this.props;
-
-    try {
-      if (group && group.value) {
-        const {
-          configuration: {
-            course: { value: courseValue },
-            faculty: { value: facultyValue },
-            group: { value: groupValue },
-          },
-          data,
-        } = this.props;
-
-        return data
-          .find((course) => course.number === courseValue)
-          .faculties.find((faculty) => faculty.name === facultyValue)
-          .groups.find((group) => group.number === groupValue).lessons;
-      }
-    } catch (e) {
-      debugger;
-    }
-    return null;
+    setUniversity(university);
   };
 
   openSubjectModal = (data) => {
@@ -95,10 +75,12 @@ class App extends Component {
 
   renderMainContent = () => {
     const { isSubjectModalVisible, subjectModalMetadata } = this.state;
-    const { loggedIn } = this.props;
+    const {
+      user: { loggedIn, university },
+    } = this.props;
     return (
       <React.Fragment>
-        {!loggedIn && <LoginModal />}
+        {!loggedIn && <LoginModal university={university} />}
         {isSubjectModalVisible && (
           <SubjectModal
             {...subjectModalMetadata}
@@ -112,7 +94,7 @@ class App extends Component {
         />
         {loggedIn && (
           <MainContent
-            data={this.getScheduleData()}
+            // data={this.getScheduleData()}
             openSubjectModal={this.openSubjectModal}
           />
         )}
@@ -121,7 +103,8 @@ class App extends Component {
   };
 
   render() {
-    const { universities, university, isLoading } = this.props;
+    const { universities, user, isLoading } = this.props;
+    const university = user && user.university;
     const { isPickerVisible } = this.state;
     return (
       <div className="app-wrapper">

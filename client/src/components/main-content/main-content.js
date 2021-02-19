@@ -8,23 +8,13 @@ class MainContent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      week: 0
+      week: 0,
     };
   }
 
-  componentDidUpdate(prevProps) {
-    const { university } = this.props.configuration;
-    const { prevUniversity } = prevProps.configuration;
-    if (
-      prevUniversity &&
-      prevUniversity.value !== university &&
-      university.value
-    ) {
-      this.props.fetchScheduleDataAction(university.value);
-    }
-  }
+  componentDidUpdate(prevProps) {}
 
-  renderScheduleForDay = day => {
+  renderScheduleForDay = (day) => {
     return;
   };
 
@@ -37,6 +27,7 @@ class MainContent extends Component {
     const { data } = this.props;
     return (
       <section className="main-content">
+        ALO
         <span className="main-content__week-picker">
           <button onClick={() => this.setState({ week: 0 })}>week 1</button>
           <button onClick={() => this.setState({ week: 1 })}>week 2</button>
@@ -52,7 +43,7 @@ class MainContent extends Component {
           {data[this.state.week].map((day, index) => (
             <React.Fragment>
               <span className="main-content__day">{DAYS[index]}</span>
-              {day.lessons.map(lesson => (
+              {day.lessons.map((lesson) => (
                 <LessonCard
                   openSubjectModal={this.props.openSubjectModal}
                   data={lesson}
@@ -72,17 +63,7 @@ class MainContent extends Component {
   );
 
   render() {
-    return (
-      <main
-        className={
-          this.props.isConfigOpen
-            ? "main-content__container"
-            : "main-content__container-full"
-        }
-      >
-        {this.props.data ? this.renderScheduleData() : this.renderEmptyData()}
-      </main>
-    );
+    return <div></div>;
   }
 }
 

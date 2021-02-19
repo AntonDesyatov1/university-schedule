@@ -32,14 +32,14 @@
   }
 
   &__toggle-on {
+    padding: 0;
+    width: 100%;
     background-color: inherit;
     border: none;
     color: black;
-    padding: 12px 16px;
     font-size: 26px;
     cursor: pointer;
     position: fixed;
-    margin: 1%;
   }
 
   &__toggle-container {

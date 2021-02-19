@@ -1,38 +1,29 @@
 import React from "react";
-import Configuration from "../../containers/configuration";
+import Menu from "../menu";
 
 import "./header.scss";
 
 class Header extends React.Component {
+  state = {
+    isMenuOpened: false,
+  };
+
+  openMenu = () =>
+    this.setState((state) => ({
+      isMenuOpened: !state.isMenuOpened,
+    }));
+
   render() {
-    const {
-      isConfigOpen,
-      user,
-      closeConfigAction,
-      toggleLoginModal,
-      openConfigAction,
-      data
-    } = this.props;
-    return isConfigOpen ? (
-      <header className="header__container">
-        <div className="header__toggle-container">
-          <button onClick={closeConfigAction} className="header__toggle-off">
-            X
+    const { isMenuOpened } = this.state;
+    return (
+      <div>
+        {!isMenuOpened && (
+          <button className="header__toggle-on" onClick={this.openMenu}>
+            <i class="fa fa-bars"></i>
           </button>
-        </div>
-        <h1 className="header__logo">University Schedule</h1>
-        {user ? (
-          <Configuration data={data} />
-        ) : (
-          <span className="header__login" onClick={toggleLoginModal}>
-            Log in to see your schedule
-          </span>
         )}
-      </header>
-    ) : (
-      <button className="header__toggle-on" onClick={openConfigAction}>
-        <i class="fa fa-bars"></i>
-      </button>
+        {isMenuOpened && <Menu />}
+      </div>
     );
   }
 }
