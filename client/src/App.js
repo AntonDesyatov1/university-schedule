@@ -92,12 +92,7 @@ class App extends Component {
           toggleLoginModal={this.toggleLoginModal}
           data={this.props.data}
         />
-        {loggedIn && (
-          <MainContent
-            // data={this.getScheduleData()}
-            openSubjectModal={this.openSubjectModal}
-          />
-        )}
+        {loggedIn && <MainContent openSubjectModal={this.openSubjectModal} />}
       </React.Fragment>
     );
   };

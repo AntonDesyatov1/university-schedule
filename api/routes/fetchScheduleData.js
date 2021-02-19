@@ -13,13 +13,42 @@ const getGroupSchedule = (group) =>
     }),
   );
 
+const organizeDays = (data) => {
+  let result = [[], [], [], [], [], []];
+
+  data.forEach((lesson) => {
+    switch (lesson.day) {
+      case "monday":
+        result[0].push(lesson);
+        return;
+      case "tuesday":
+        result[1].push(lesson);
+        return;
+      case "Wednesday":
+        result[2].push(lesson);
+        return;
+      case "Thursday":
+        result[3].push(lesson);
+        return;
+      case "Friday":
+        result[4].push(lesson);
+        return;
+      case "Saturday":
+        result[5].push(lesson);
+        return;
+    }
+  });
+
+  return result;
+};
+
 router.get("/", async function (req, res, next) {
   const { group } = req.headers;
   try {
     const userData = await getGroupSchedule(group).then(
       (data) => {
         res.status(200);
-        return data;
+        return organizeDays(data);
       },
       (error) => {
         throw { message: error };

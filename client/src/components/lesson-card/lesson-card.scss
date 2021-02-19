@@ -1,20 +1,6 @@
 .lesson-card {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  border-top: 1px solid black;
-  border-right: 1px solid black;
-  height: 100%;
-  text-align: center;
-
   &__metadata {
-    display: flex;
-    flex-direction: column;
-  }
-  &__teachers {
     display: flex;
     flex-direction: column;
   }

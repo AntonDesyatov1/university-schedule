@@ -6,6 +6,7 @@ const initialState = {
   error: null,
   data: {
     universities: [],
+    schedule: [],
   },
 };
 
@@ -44,7 +45,7 @@ export default function reducer(state = initialState, action = {}) {
     case ACTIONS.SET_SCHEDULE_DATA:
       return {
         ...state,
-        data: action.payload,
+        data: { ...state.data, schedule: action.payload },
       };
 
     case ACTIONS.SET_UNIVERSITIES_DATA:
