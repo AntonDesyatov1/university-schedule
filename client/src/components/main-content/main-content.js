@@ -5,54 +5,33 @@ import { DAYS } from "../../constants";
 import "./main-content.scss";
 
 class MainContent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      week: 0,
-    };
-  }
-
-  componentDidUpdate(prevProps) {}
-
-  renderScheduleForDay = (day) => {
-    return;
-  };
-
   toggleModal = () =>
     this.setState({ isModalVisible: !this.state.isModalVisible });
 
-  getDayName = () => {};
-
-  renderScheduleData = () => {
-    const { data } = this.props;
-    console.log(data);
+  renderDayOff = () => {
     return (
-      <section className="main-content">
-        <div className="main-content__day-card">
-          Monday
-          {data.length &&
-            data[0].map((lesson) => {
-              console.log(lesson);
-              return <LessonCard {...lesson} />;
-            })}
+      <div className="main-content__day-off-card">
+        <div className="main-content__day-off-card-img">
+          <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/271/partying-face_1f973.png" />
         </div>
-        <div className="main-content__day-card">Tuesday</div>
-        <div className="main-content__day-card">Wednesday</div>
-        <div className="main-content__day-card">Thursday</div>
-        <div className="main-content__day-card">Friday</div>
-        <div className="main-content__day-card">Saturday</div>
-      </section>
+        <span>Day off!</span>
+      </div>
     );
   };
 
-  renderEmptyData = () => (
-    <div className="main-content__empty-data">
-      Choose your course, faculty and group to see your schedule
-    </div>
-  );
-
   render() {
-    return this.renderScheduleData();
+    return (
+      <section className="main-content">
+        {this.props.data.map((day, index) => (
+          <div className="main-content__day-card">
+            {DAYS[index]}
+            {day.length
+              ? day.map((lesson) => <LessonCard {...lesson} />)
+              : this.renderDayOff()}
+          </div>
+        ))}
+      </section>
+    );
   }
 }
 

@@ -8,7 +8,7 @@ class Header extends React.Component {
     isMenuOpened: false,
   };
 
-  openMenu = () =>
+  toggleMenu = () =>
     this.setState((state) => ({
       isMenuOpened: !state.isMenuOpened,
     }));
@@ -18,11 +18,11 @@ class Header extends React.Component {
     return (
       <div>
         {!isMenuOpened && (
-          <button className="header__toggle-on" onClick={this.openMenu}>
+          <button className="header__toggle-on" onClick={this.toggleMenu}>
             <i class="fa fa-bars"></i>
           </button>
         )}
-        {isMenuOpened && <Menu />}
+        {isMenuOpened && <Menu toggleMenu={this.toggleMenu} />}
       </div>
     );
   }

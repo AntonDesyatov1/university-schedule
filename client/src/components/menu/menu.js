@@ -1,5 +1,6 @@
 import React from "react";
 
+import "./menu.scss";
 class Menu extends React.Component {
   render() {
     return (
@@ -7,6 +8,7 @@ class Menu extends React.Component {
         <span>Profile</span>
         <span>Anything else</span>
         <span> ALO </span>
+        <button onClick={this.props.toggleMenu}>Close</button>
       </section>
     );
   }
