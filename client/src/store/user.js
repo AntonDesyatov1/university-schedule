@@ -19,7 +19,11 @@ export default function reducer(state = initialState, action = {}) {
     case ACTIONS.LOGIN_USER_SUCCESSFUL:
       return {
         ...state,
-        data: { ...action.payload, loggedIn: true },
+        data: {
+          university: state.data.university,
+          ...action.payload,
+          loggedIn: true,
+        },
       };
 
     case ACTIONS.LOGIN_USER_FAILURE:
@@ -74,6 +78,40 @@ export const loginUser = (login, password, university) => async (dispatch) => {
   } catch (e) {
     dispatch(userLoginFailure(e));
     dispatch(setLoadingFalse());
+  }
+};
+
+export const updateUserInfo = ({ phoneNumber, email }) => async (
+  dispatch,
+  getState,
+) => {
+  dispatch(setLoadingTrue());
+
+  try {
+    const {
+      login,
+      university,
+      email: currentEmail,
+      phoneNumber: currentPhoneNumber,
+    } = getState().user.data;
+
+    const { data } = await axios.post(
+      "http://localhost:9000/updateUserInfo",
+      null,
+      {
+        params: {
+          phoneNumber: phoneNumber || currentPhoneNumber,
+          email: email || currentEmail,
+          login,
+          university,
+        },
+      },
+    );
+
+    dispatch(setUserData(data));
+    dispatch(setLoadingFalse());
+  } catch (e) {
+    console.log(e);
   }
 };
 

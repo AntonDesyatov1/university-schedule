@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { updateUserInfo } from "../../store/user";
 
 import "./menu.scss";
 class Menu extends React.Component {
@@ -7,8 +8,23 @@ class Menu extends React.Component {
     editMode: false,
   };
 
+  componentDidMount() {
+    const {
+      user: { email, phoneNumber },
+    } = this.props;
+    this.setState({ email, phoneNumber });
+  }
+
+  handlePhoneNumberChange = (e) =>
+    this.setState({ phoneNumber: e.target.value });
+
+  handleEmailChange = (e) => this.setState({ email: e.target.value });
+
   handleSubmit = (e) => {
     e.preventDefault();
+    const { phoneNumber, email } = this.state;
+    const { login, updateUserInfo, university } = this.props;
+    updateUserInfo({ phoneNumber, email, login, university });
     this.setState({ editMode: false });
   };
 
@@ -16,11 +32,19 @@ class Menu extends React.Component {
     <form className="menu__info" onSubmit={this.handleSubmit}>
       <span>
         <label>Phone number</label>
-        <input placeholder="Your phone number" />
+        <input
+          placeholder="Your phone number"
+          value={this.state.phoneNumber}
+          onChange={this.handlePhoneNumberChange}
+        />
       </span>
       <span>
         <label>e-mail</label>
-        <input placeholder="Your email" />
+        <input
+          placeholder="Your email"
+          value={this.state.email}
+          onChange={this.handleEmailChange}
+        />
       </span>
       <button onClick={this.handleSubmit}>Save</button>
     </form>
@@ -28,7 +52,7 @@ class Menu extends React.Component {
 
   render() {
     const {
-      user: { name, img },
+      user: { fio, img, phoneNumber, email },
     } = this.props;
     return (
       <section className="menu">
@@ -40,7 +64,9 @@ class Menu extends React.Component {
           this.renderEditForm()
         ) : (
           <div className="menu__info">
-            <span>{name}</span>
+            <span>{fio}</span>
+            <span>{phoneNumber}</span>
+            <span>{email}</span>
             <button onClick={() => this.setState({ editMode: true })}>
               Edit info
             </button>
@@ -58,4 +84,8 @@ const mapStateToProps = (state) => ({
   user: state.user.data,
 });
 
-export default connect(mapStateToProps)(Menu);
+const mapDispatchToProps = {
+  updateUserInfo,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);

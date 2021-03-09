@@ -7,10 +7,10 @@ const ERROR_MESSAGE = "ID or password is incorrect!";
 const getUser = (login, password, university) =>
   new Promise((resolve, reject) =>
     database.query(
-      `SELECT name,img,course,groupNumber FROM ${university}_USERS where password ="${password}" AND name="${login}"`,
+      `SELECT * FROM ${university}_USERS where password ="${password}" AND login="${login}"`,
       (err, result, fields) => {
-        if (!result.length) {
-          reject(ERROR_MESSAGE);
+        if (!result) {
+          reject(err.sqlMessage);
         }
         resolve(result);
       },
@@ -19,7 +19,9 @@ const getUser = (login, password, university) =>
 
 router.get("/", async function (req, res, next) {
   const { login, password, university } = req.headers;
+
   const encodedPassword = new Buffer.from(password).toString("base64");
+  console.log(login, password, university);
   try {
     const userData = await getUser(login, encodedPassword, university).then(
       (user) => {

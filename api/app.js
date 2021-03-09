@@ -8,6 +8,7 @@ const fetchUniversitiesRouter = require("./routes/fetchUniversities");
 const testAPIRouter = require("./routes/testAPI");
 const loginUser = require("./routes/loginUser");
 const fetchScheduleData = require("./routes/fetchScheduleData");
+const updateUserInfo = require("./routes/updateUserInfo");
 const app = express();
 
 // view engine setup
@@ -24,6 +25,7 @@ app.use("/universities", fetchUniversitiesRouter);
 app.use("/testAPI", testAPIRouter);
 app.use("/loginUser", loginUser);
 app.use("/fetchScheduleData", fetchScheduleData);
+app.use("/updateUserInfo", updateUserInfo);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
